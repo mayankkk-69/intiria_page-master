@@ -72,10 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $currentData[$row['section_name']] = json_decode($row['data'], true);
         }
         
-        echo json_encode($currentData);
+        echo json_encode(['success' => true, 'data' => $currentData]);
     } catch (PDOException $e) {
         http_response_code(500);
-        echo json_encode(['error' => 'Failed to fetch data']);
+        echo json_encode(['success' => false, 'message' => 'Failed to fetch data: ' . $e->getMessage()]);
     }
 }
 ?>

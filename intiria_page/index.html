@@ -17,16 +17,25 @@
     
     <!-- Component CSS -->
     <link rel="stylesheet" href="css/sections.css">
+    <script>
+        // Stub for resizeIQ to handle asynchronous loading of main.js
+        window.resizeIQ = function(frame) {
+            if (window.switchIQ) { // switchIQ is defined alongside real resizeIQ in main.js
+                try {
+                    const h = frame.contentWindow.document.body.scrollHeight;
+                    if (h > 100) frame.style.height = (h + 40) + 'px';
+                } catch(e) { frame.style.height = '800px'; }
+            } else {
+                setTimeout(() => window.resizeIQ(frame), 200);
+            }
+        };
+    </script>
     </head>
 <body>
     <div id="header-root"></div>
     <main id="top">
         <div id="hero-root"></div>
         <div id="kpi-root"></div>
-        <div id="benefits-root"></div>
-        <div id="studio-root"></div>
-        <div id="contact-root"></div>
-        <div id="industrial-root"></div>
         <div id="pricing-root"></div>
         <div id="residential-quote-root"></div>
         <div id="commercial-quote-root"></div>
@@ -42,14 +51,10 @@
                 { id: 'header-root', url: 'sections/header/header.html' },
                 { id: 'hero-root', url: 'sections/hero/hero.html' },
                 { id: 'kpi-root', url: 'sections/kpi/kpi.html' },
-                { id: 'benefits-root', url: 'sections/benefits/benefits.html' },
-                { id: 'studio-root', url: 'sections/studio/studio.html' },
-                { id: 'contact-root', url: 'sections/contact/contact.html' },
-                { id: 'industrial-root', url: 'sections/industrial/industrial.html' },
                 { id: 'pricing-root', url: 'sections/pricing/pricing.html' },
                 { id: 'residential-quote-root', url: 'sections/residential-quote/residential-quote.html' },
                 { id: 'commercial-quote-root', url: 'sections/commercial-quote/commercial-quote.html' },
-                { id: 'construction-quote-root', url: 'sections/construction-quote/construction-quote.html' },
+                { id: 'construction-quote-root', url: 'sections/industrial-quote/construction-quote.html' },
                 { id: 'cta-root', url: 'sections/cta/cta.html' },
                 { id: 'footer-root', url: 'sections/footer/footer.html' }
             ];
@@ -72,7 +77,7 @@
             
             // Load component specific JS
             const componentScripts = [
-                'sections/header/header.js', 'sections/hero/hero.js', 'sections/kpi/kpi.js', 'sections/benefits/benefits.js', 'sections/pricing/pricing.js', 'sections/studio/studio.js', 'sections/contact/contact.js', 'sections/industrial/industrial.js', 'sections/cta/cta.js', 'sections/footer/footer.js', 'js/cms_connector.js'
+                'sections/header/header.js', 'sections/hero/hero.js', 'sections/kpi/kpi.js', 'sections/pricing/pricing.js', 'sections/cta/cta.js', 'sections/footer/footer.js', 'js/cms_connector.js'
             ];
             componentScripts.forEach(src => {
                 const s = document.createElement('script');

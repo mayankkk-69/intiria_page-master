@@ -6,8 +6,8 @@
     <title>INTER'OR RESIDENTIAL STANDARD PLAN</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/../css/all.min.css">
-    <link rel="stylesheet" href="../css/quote-calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="residential.css">
 </head>
 <body>
     <div class="column">
@@ -26,6 +26,14 @@
             <button class="arrow arrow-right" onclick="scrollImages(1)">&#10095;</button>
         </div>
         <div class="carousel-dots" id="carouselDots"></div>
+        <!-- Lightbox -->
+        <div class="lightbox-overlay" id="lightbox">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav prev" onclick="lbNav(-1)">&#10094;</button>
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+            <button class="lightbox-nav next" onclick="lbNav(1)">&#10095;</button>
+        </div>
     </div>
     
     <div class="column">
@@ -505,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 </script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="../js/quote_connector.js"></script>
+    <script src="residential.js"></script>
     <script>
         loadQuoteContent('res-basic');
     </script>

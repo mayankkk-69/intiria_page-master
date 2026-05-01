@@ -1,0 +1,693 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 100%;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13.5px; 
+    background-color: #e9e7e2;
+}
+
+.column {
+    overflow-y: auto;
+    width: 30%;
+    padding: 14px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Right column: fills full height and stacks its content */
+.column:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.column:first-child {
+    overflow: hidden;
+    align-self: center;
+}
+.column::-webkit-scrollbar { width: 5px; }
+.column::-webkit-scrollbar-track { background: #f0f0f0; }
+.column::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 4px; }
+.column::-webkit-scrollbar-thumb:hover { background: #962d22; }
+p{
+    text-align: justify;
+}
+
+/* ── Carousel ── */
+.image-container {
+    position: relative;
+    width: 85%; margin: 0 auto;
+    
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    background: #f0f0f0;
+    height: 60vh;
+}
+
+.scrollable-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scrollable-images img {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.scrollable-images img:hover {
+    transform: scale(1.03);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    color: #333;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+}
+
+.arrow:hover { background: #fff; }
+.arrow-left  { left: 10px; }
+.arrow-right { right: 10px; }
+
+/* Carousel dot indicators */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+}
+.carousel-dot.active {
+    background: #c0392b;
+    transform: scale(1.3);
+}
+
+/* ── Lightbox ── */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    animation: lbFadeIn 0.2s ease;
+}
+.lightbox-overlay.active { display: flex; }
+@keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.lightbox-img {
+    max-width: 92vw;
+    max-height: 82vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    animation: lbZoom 0.25s ease;
+}
+@keyframes lbZoom { from { transform: scale(0.92); } to { transform: scale(1); } }
+
+.lightbox-counter {
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
+.lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+.lightbox-nav.prev { left: 16px; }
+.lightbox-nav.next { right: 16px; }
+
+@media (max-width: 768px) {
+    .arrow { width: 30px; height: 30px; font-size: 13px; }
+}
+
+
+/* General Styling */
+.dropdown {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.dropdown-content {
+    display: none;
+    margin-top: 8px;
+    list-style-type: disc;
+    padding: 12px 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #fafafa;
+    border-left: 3px solid #c0392b;
+    border-radius: 0 6px 6px 0;
+    scroll-behavior: smooth;
+}
+.dropdown-content::-webkit-scrollbar { width: 5px; }
+.dropdown-content::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 4px; }
+.dropdown-content::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 4px; }
+.dropdown-content::-webkit-scrollbar-thumb:hover { background: #962d22; }
+
+.dropdown-button {
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.dropdown-button:hover {
+    background-color: #f0f0f0; /* A light hover effect for better UX */
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+    .dropdown {
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    .dropdown-button {
+        font-size: 14px;
+        padding: 12px; /* Slightly increased padding for better mobile touch response */
+        font-weight: 600;
+    }
+
+    .dropdown-content {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        margin-top: 8px;
+        padding-left: 15px; /* Adjust spacing for mobile */
+    }
+}
+
+.slider-container {
+    margin-top: 6px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.slider-container h3 {
+    font-size: 16px;
+    margin: 14px 0 6px 0;
+    font-weight: 700;
+}
+
+.slider-container input[type="range"] {
+    width: 70%;
+    margin: 10px 0;
+    height: 6px;
+}
+
+.slider-container input[type="number"] {
+    width: 30%;
+    padding: 7px 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    font-size: 14px;
+}
+
+.total-price, .site-visits {
+    font-size: 1.5em;
+    margin: 8px 0;
+}
+
+.site-visits {
+    margin-top: 8px;
+}
+
+.checkbox-container {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* Kill the big default h3 margin inside the right column sections */
+.checkbox-container h3 {
+    font-size: 16px;
+    margin: 14px 0 8px 0;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Tighten the gap between each radio group */
+.checkbox-container > div {
+    margin-bottom: 8px;
+}
+
+.checkbox-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.checkbox-container input[type="radio"] {
+    margin-right: 8px;
+    color: red;
+}
+
+.button-container {
+    margin-top: 14px;
+    padding-bottom: 10px;
+}
+
+.button-container button {
+    padding: 8px 20px;
+    margin: 4px;
+    border: none;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 18px;
+    font-size: 14px;
+}
+
+.button-container button:hover {
+    background-color: maroon;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.modal-content button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: maroon;
+}
+
+.stage-details {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.stage-details.active {
+    display: block;
+}
+
+.stage-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stage-button:hover {
+    background-color: maroon;
+}
+
+.stage-container {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+.total-price {
+    color: red;
+    font-weight: 600;
+}
+
+.site-visits {
+    color: red;
+    font-weight: 600;
+}
+
+
+.social-share {
+  display: grid;
+  grid-template-columns: repeat(5, 60px); /* 3 columns */
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+    margin-top: 10px;
+    gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-share { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.social-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+.social-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+.social-icon svg { width: 20px; height: 20px; fill: #fff; }
+.facebook { background: #1877f2; }
+.twitter  { background: #000; }
+.linkedin { background: #0a66c2; }
+.whatsapp { background: #25d366; }
+.email    { background: #ea4335; }
+
+/* Media Queries */
+
+/* Tablets and smaller laptops (max-width: 768px) */
+@media (max-width: 768px) {
+  .social-share {
+    grid-template-columns: repeat(5, 70px); /* Reduce to 2 columns */
+    gap: 20px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .social-share {
+    grid-template-columns: repeat(5, 60px); /* 2 icons per row */
+    gap: 15px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+
+h1 {
+    color: red;
+    justify-content: center;
+}
+
+h3 {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.read-more {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.refund-policy {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+    overflow: hidden;
+        width: 90%; /* Adjust for mobile */
+        padding: 10px;
+    }
+
+    .image-container {
+        width: 85%; margin: 0 auto;
+        height: auto; /* Adjust height as needed */
+    }
+
+    .scrollable-images img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .arrow {
+        display: none; /* Hide arrows on mobile */
+    }
+
+    .dropdown-content {
+        max-height: 180px; /* Still scrollable on mobile */
+    }
+
+    .slider-container input[type="range"] {
+        width: 100%;
+    }
+
+    .slider-container input[type="number"] {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .total-price, .site-visits {
+        font-size: 1.2em; /* Adjust font size for mobile */
+    }
+
+    .checkbox-container label {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .button-container button {
+        padding: 8px 20px; /* Adjust padding for mobile */
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .modal-content {
+        width: 90%; /* Adjust modal width for mobile */
+    }
+
+    .stage-button {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .social-share {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-share a {
+        font-size: 20px; /* Adjust font size for mobile */
+    }
+
+    /* Ensure scrollable images don’t start scrolling automatically */
+.scrollable-images {
+    transition: none; /* Disable transitions to prevent unwanted movement */
+}
+
+/* Hide sections by default on mobile */
+.read-more, .payment-stages, .refund-policy {
+    display: none; /* Hide sections by default */
+}
+
+/* Show sections when active */
+.read-more.active, .payment-stages.active, .refund-policy.active {
+    display: block;
+}
+
+/* Adjust styles for mobile */
+@media (max-width: 768px) {
+    .read-more, .payment-stages, .refund-policy {
+        display: none; /* Hide by default */
+    }
+
+    .read-more.active, .payment-stages.active, .refund-policy.active {
+        display: block; /* Show when active */
+    }
+
+    /* Adjust button sizes for mobile */
+    .button-container button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    /* Adjust other styles as needed */
+}
+}
+
+.justified {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+
+.dropdown-content ul {
+    padding-left: 20px;
+}
+
+h1, h3, h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.dropdown-button {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input-suffix {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+    
+    /* Sync Sizes */
+    .total-price {
+        font-size: 18px !important;
+        margin-bottom: 8px;
+    }
+    .site-visits {
+        font-size: 16px !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .slider-container h3 {
+        font-size: 16px !important;
+        margin: 10px 0 6px 0 !important;
+    }
+    .checkbox-container h3 span {
+        font-size: 16px !important;
+    }
+    .checkbox-container label {
+        font-size: 14px !important;
+    }
+    .button-container button {
+        font-size: 14px !important;
+        padding: 8px 16px !important;
+    }
