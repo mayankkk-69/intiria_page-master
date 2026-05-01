@@ -1,0 +1,134 @@
+<div class="ib-editor-card" id="ib-pricing-editor-card">
+    <div class="ib-editor-card__head" data-card="ib-pricing-editor-card">
+        <div class="ib-editor-card__head-left">
+            <div class="ib-editor-card__icon"><i class="fas fa-tags"></i></div>
+            <div>
+                <div class="ib-editor-card__title">Pricing Plans</div>
+                <div class="ib-editor-card__subtitle">Section intro, background image, and all three plan details</div>
+            </div>
+        </div>
+        <i class="fas fa-chevron-down ib-editor-card__chevron"></i>
+    </div>
+
+    <div class="ib-editor-card__body">
+
+        <div class="ib-row-label">Section Header</div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-pricing-eyebrow">Eyebrow Tag</label>
+            <input class="ib-form-input" id="ib-pricing-eyebrow" type="text" value="Packages">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-pricing-title">Section Title</label>
+            <input class="ib-form-input" id="ib-pricing-title" type="text" value="Choose the perfect plan for your project.">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-pricing-desc">Description</label>
+            <textarea class="ib-form-textarea" id="ib-pricing-desc">Every plan starts with strong design fundamentals and scales up into visualisation, vendor coordination, furniture detailing, and deeper project oversight.</textarea>
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-pricing-note">Pricing Note (small text)</label>
+            <input class="ib-form-input" id="ib-pricing-note" type="text" value="Use these tiers as a quick filter. If your space needs something custom, the contact sheet below is a better place to begin.">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-pricing-bg">Background Image Path</label>
+            <input class="ib-form-input" id="ib-pricing-bg" type="text" value="photos/pexels-fotios-photos-1090638.jpg">
+        </div>
+
+        <hr class="ib-section-divider">
+
+        <div class="ib-row-label">Pricing Plans</div>
+        <div class="ib-pricing-editor__plans">
+
+            <!-- Standard -->
+            <div class="ib-pricing-editor__plan">
+                <div class="ib-pricing-editor__plan-badge">Standard Plan</div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan1-chip">Chip Label</label>
+                    <input class="ib-form-input" id="ib-plan1-chip" type="text" value="Standard">
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan1-title">Plan Title</label>
+                    <input class="ib-form-input" id="ib-plan1-title" type="text" value="Standard Plan">
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan1-summary">Summary</label>
+                    <textarea class="ib-form-textarea" id="ib-plan1-summary" style="min-height:70px;">A practical essentials package for clients who need a solid design and drawing foundation.</textarea>
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label">Features</label>
+                    <div class="ib-list-editor" id="ib-plan1-features">
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Concept design and visual references"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="2D detail drawings for major interior elements"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Electrical, water supply, and plumbing drawings"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Material guidance and colour combinations"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Contractor finalization assistance"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Audio and video call support during the project"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Site visit assistance"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                    </div>
+                    <button class="ib-list-add-btn" data-list="ib-plan1-features"><i class="fas fa-plus"></i> Add Feature</button>
+                </div>
+            </div>
+
+            <!-- Premium -->
+            <div class="ib-pricing-editor__plan featured">
+                <div class="ib-pricing-editor__plan-badge">Premium Plan (Featured)</div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan2-chip">Chip Label</label>
+                    <input class="ib-form-input" id="ib-plan2-chip" type="text" value="Most selected">
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan2-title">Plan Title</label>
+                    <input class="ib-form-input" id="ib-plan2-title" type="text" value="Premium Plan">
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan2-summary">Summary</label>
+                    <textarea class="ib-form-textarea" id="ib-plan2-summary" style="min-height:70px;">Best for clients who want a clearer visual outcome before site execution begins.</textarea>
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label">Features</label>
+                    <div class="ib-list-editor" id="ib-plan2-features">
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Everything in the Standard Plan"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="3D views for all spaces"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Five additional site visits"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Vastu incorporation"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                    </div>
+                    <button class="ib-list-add-btn" data-list="ib-plan2-features"><i class="fas fa-plus"></i> Add Feature</button>
+                </div>
+            </div>
+
+            <!-- Elite -->
+            <div class="ib-pricing-editor__plan">
+                <div class="ib-pricing-editor__plan-badge">Elite Plan</div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan3-chip">Chip Label</label>
+                    <input class="ib-form-input" id="ib-plan3-chip" type="text" value="Full support">
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan3-title">Plan Title</label>
+                    <input class="ib-form-input" id="ib-plan3-title" type="text" value="Elite Plan">
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label" for="ib-plan3-summary">Summary</label>
+                    <textarea class="ib-form-textarea" id="ib-plan3-summary" style="min-height:70px;">For premium residences needing deeper coordination, detail resolution, and tracking.</textarea>
+                </div>
+                <div class="ib-form-group">
+                    <label class="ib-form-label">Features</label>
+                    <div class="ib-list-editor" id="ib-plan3-features">
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Everything in the Premium Plan"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Scientific vastu inputs"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Furniture detailing"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Onsite sample selection"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Online vendor management system access"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                        <div class="ib-list-item"><span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span><input type="text" value="Timeline and project monitoring support"><span class="ib-list-item__del"><i class="fas fa-times"></i></span></div>
+                    </div>
+                    <button class="ib-list-add-btn" data-list="ib-plan3-features"><i class="fas fa-plus"></i> Add Feature</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ib-editor-card__footer">
+        <button class="ib-btn-secondary" onclick="ibResetSection('pricing')"><i class="fas fa-undo"></i> Reset</button>
+        <button class="ib-btn-save" onclick="ibSaveSection('pricing')"><i class="fas fa-save"></i> Save Pricing</button>
+    </div>
+</div>

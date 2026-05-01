@@ -1,0 +1,109 @@
+<div class="ib-editor-card" id="ib-header-editor-card">
+    <div class="ib-editor-card__head" data-card="ib-header-editor-card">
+        <div class="ib-editor-card__head-left">
+            <div class="ib-editor-card__icon"><i class="fas fa-window-maximize"></i></div>
+            <div>
+                <div class="ib-editor-card__title">Header & Navigation</div>
+                <div class="ib-editor-card__subtitle">Logo, nav links, phone number & CTA button</div>
+            </div>
+        </div>
+        <i class="fas fa-chevron-down ib-editor-card__chevron"></i>
+    </div>
+
+    <div class="ib-editor-card__body">
+
+        <!-- Logo -->
+        <div class="ib-row-label">Brand Logo</div>
+        <div class="ib-form-group">
+            <label class="ib-form-label">Current Logo Image</label>
+            <div class="ib-upload-box">
+                <div class="ib-upload-box__icon"><i class="fas fa-image"></i></div>
+                <div class="ib-upload-box__label"><span>Click to upload</span> or drag & drop a new logo</div>
+                <div class="ib-upload-box__hint">PNG, SVG recommended - Max 500kb</div>
+                <input type="file" id="ib-header-logo-file" accept="image/*">
+            </div>
+            <div class="ib-preview-strip" id="ib-header-logo-preview"></div>
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-header-logo-path">Logo File Path (relative to intiria_page/)</label>
+            <input class="ib-form-input" id="ib-header-logo-path" type="text" value="photos/Hive Tag line 11 (1).png">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-header-brand-name">Brand Name</label>
+            <input class="ib-form-input" id="ib-header-brand-name" type="text" value="ArchitectsHive">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-header-brand-tagline">Brand Tagline (below name)</label>
+            <input class="ib-form-input" id="ib-header-brand-tagline" type="text" value="Redefining the limits of architecture">
+        </div>
+
+        <hr class="ib-section-divider">
+
+        <!-- Contact Info -->
+        <div class="ib-row-label">Contact Details</div>
+        <div class="ib-form-grid-2">
+            <div class="ib-form-group">
+                <label class="ib-form-label" for="ib-header-phone">Phone Number</label>
+                <input class="ib-form-input" id="ib-header-phone" type="text" value="+917503468992">
+            </div>
+            <div class="ib-form-group">
+                <label class="ib-form-label" for="ib-header-cta-link">Consultation Booking URL</label>
+                <input class="ib-form-input" id="ib-header-cta-link" type="text" value="https://www.architectshive.com/book-appointment">
+            </div>
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-header-cta-text">CTA Button Text</label>
+            <input class="ib-form-input" id="ib-header-cta-text" type="text" value="Book Consultation">
+        </div>
+
+        <hr class="ib-section-divider">
+
+        <!-- Nav Links -->
+        <div class="ib-row-label">Navigation Links</div>
+        <div class="ib-header-editor__nav-list" id="ib-header-nav-list">
+            <div class="ib-list-item">
+                <span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span>
+                <input type="text" value="Home" placeholder="Label">
+                <input type="text" value="#top" placeholder="URL / anchor" style="width:220px;max-width:45%;">
+                <span class="ib-list-item__del"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="ib-list-item">
+                <span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span>
+                <input type="text" value="Intiria" placeholder="Label">
+                <input type="text" value="#hero-section" placeholder="URL / anchor" style="width:220px;max-width:45%;">
+                <span class="ib-list-item__del"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="ib-list-item">
+                <span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span>
+                <input type="text" value="Projects" placeholder="Label">
+                <input type="text" value="https://www.architectshive.com/project" placeholder="URL / anchor" style="width:220px;max-width:45%;">
+                <span class="ib-list-item__del"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="ib-list-item">
+                <span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span>
+                <input type="text" value="Services" placeholder="Label">
+                <input type="text" value="https://www.architectshive.com/services" placeholder="URL / anchor" style="width:220px;max-width:45%;">
+                <span class="ib-list-item__del"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="ib-list-item">
+                <span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span>
+                <input type="text" value="About" placeholder="Label">
+                <input type="text" value="https://www.architectshive.com/about-us" placeholder="URL / anchor" style="width:220px;max-width:45%;">
+                <span class="ib-list-item__del"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="ib-list-item">
+                <span class="ib-list-item__drag"><i class="fas fa-grip-vertical"></i></span>
+                <input type="text" value="Blogs" placeholder="Label">
+                <input type="text" value="https://www.architectshive.com/blogs" placeholder="URL / anchor" style="width:220px;max-width:45%;">
+                <span class="ib-list-item__del"><i class="fas fa-times"></i></span>
+            </div>
+        </div>
+        <button class="ib-list-add-btn" id="ib-header-add-nav"><i class="fas fa-plus"></i> Add Nav Item</button>
+
+    </div>
+
+    <div class="ib-editor-card__footer">
+        <button class="ib-btn-secondary" onclick="ibResetSection('header')"><i class="fas fa-undo"></i> Reset</button>
+        <button class="ib-btn-save" onclick="ibSaveSection('header')"><i class="fas fa-save"></i> Save Header</button>
+    </div>
+</div>

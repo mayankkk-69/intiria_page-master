@@ -1,0 +1,80 @@
+<div class="ib-editor-card" id="ib-quote-content-res-editor-card">
+    <div class="ib-editor-card__head" data-card="ib-quote-content-res-editor-card">
+        <div class="ib-editor-card__head-left">
+            <div class="ib-editor-card__icon"><i class="fas fa-home"></i></div>
+            <div>
+                <div class="ib-editor-card__title">Residential Quote Content</div>
+                <div class="ib-editor-card__subtitle">Edit titles, descriptions, and images for Residential forms</div>
+            </div>
+        </div>
+        <i class="fas fa-chevron-down ib-editor-card__chevron"></i>
+    </div>
+
+    <div class="ib-editor-card__body">
+        <div class="ib-form-group">
+            <label class="ib-form-label">Select Plan to Edit</label>
+            <select class="ib-form-input" id="ib-plan-selector-res" onchange="ibTogglePlanEditorRes()">
+                <option value="res-basic">Residential - Standard Plan</option>
+                <option value="res-premium">Residential - Premium Plan</option>
+                <option value="res-deluxe">Residential - Elite Plan</option>
+            </select>
+        </div>
+
+        <hr class="ib-section-divider">
+
+        <div id="ib-plan-editors-container-res"></div>
+    </div>
+
+    <div class="ib-editor-card__footer">
+        <button class="ib-btn-secondary" onclick="ibResetSection('quote_content_res')"><i class="fas fa-undo"></i> Reset</button>
+        <button class="ib-btn-save" onclick="ibSaveSection('quote_content_res')"><i class="fas fa-save"></i> Save Residential Content</button>
+    </div>
+</div>
+
+<script>
+    const resImgsDef = '/intiria_page-master/intiria_page/photos/residential/1.jpeg, /intiria_page-master/intiria_page/photos/residential/2.jpeg, /intiria_page-master/intiria_page/photos/residential/3.jpeg, /intiria_page-master/intiria_page/photos/residential/4.jpeg, /intiria_page-master/intiria_page/photos/residential/5.jpeg, /intiria_page-master/intiria_page/photos/residential/6.jpeg, /intiria_page-master/intiria_page/photos/residential/7.jpeg, /intiria_page-master/intiria_page/photos/residential/8.jpeg';
+
+    const plansRes = [
+        { id: 'res-basic', name: 'Residential - Standard Plan', defTitle: 'Standard Plan For Residential Projects.', defDesc: 'Our Standard Plan provides essential interior design services...', defImgs: resImgsDef },
+        { id: 'res-premium', name: 'Residential - Premium Plan', defTitle: 'Premium Plan For Residential Projects.', defDesc: 'Our Premium Plan provides advanced interior design services...', defImgs: resImgsDef },
+        { id: 'res-deluxe', name: 'Residential - Elite Plan', defTitle: 'Elite Plan For Residential Projects.', defDesc: 'Our Elite Plan provides luxury interior design services...', defImgs: resImgsDef }
+    ];
+
+    const containerRes = document.getElementById('ib-plan-editors-container-res');
+    let htmlRes = '';
+    
+    plansRes.forEach(plan => {
+        htmlRes += `
+        <div class="ib-plan-editor-group-res" id="editor-group-${plan.id}" style="display: none;">
+            <div class="ib-row-label">Editing: ${plan.name}</div>
+            
+            <div class="ib-form-group">
+                <label class="ib-form-label" for="ib-qc-${plan.id}-title">Main Title</label>
+                <input class="ib-form-input" id="ib-qc-${plan.id}-title" type="text" value="${plan.defTitle}">
+            </div>
+            
+            <div class="ib-form-group">
+                <label class="ib-form-label" for="ib-qc-${plan.id}-desc">Brief Detail Description</label>
+                <textarea class="ib-form-input" id="ib-qc-${plan.id}-desc" rows="4">${plan.defDesc}</textarea>
+            </div>
+            
+            <div class="ib-form-group">
+                <label class="ib-form-label" for="ib-qc-${plan.id}-imgs">Image URLs (comma separated)</label>
+                <textarea class="ib-form-input" id="ib-qc-${plan.id}-imgs" rows="3">${plan.defImgs}</textarea>
+                <div class="ib-upload-box__hint">Paste the paths of the images you want in the gallery carousel, separated by commas.</div>
+            </div>
+        </div>`;
+    });
+    
+    containerRes.innerHTML = htmlRes;
+
+    function ibTogglePlanEditorRes() {
+        const selected = document.getElementById('ib-plan-selector-res').value;
+        document.querySelectorAll('.ib-plan-editor-group-res').forEach(el => {
+            el.style.display = 'none';
+        });
+        document.getElementById('editor-group-' + selected).style.display = 'block';
+    }
+
+    ibTogglePlanEditorRes();
+</script>

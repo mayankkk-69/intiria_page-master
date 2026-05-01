@@ -1,0 +1,145 @@
+/* ============================================================
+   MOBILE.CSS  –  Responsive breakpoints for Intiria / ArchitectsHive
+   All widths use %  so layout fills any screen size automatically.
+   Breakpoints:  1200px | 1024px | 860px | 640px | 480px
+   ============================================================ */
+
+/* ── 1200px: Comfortable laptops / small desktops ───────────── */
+@media (max-width: 1200px) {
+    .hero-grid, .studio-grid, .contact-panel, .footer-top { grid-template-columns: 1fr; }
+    .hero { padding: 18px 0 30px; }
+    .hero-copy, .hero-visual, .video-gallery { min-height: auto; }
+    .video-gallery { min-height: clamp(520px, 58vw, 680px); }
+    .insight-grid, .stats-grid, .pricing-grid, .services-grid, .footer-links { grid-template-columns: repeat(2, 1fr); }
+    .pricing-intro, .contact-mosaic { grid-template-columns: 1fr; }
+    .hero-copy { min-height: auto; }
+    .brand { min-width: 200px; }
+    .brand-copy strong { font-size: 1.28rem; }
+    .brand-copy small { font-size: 0.6rem; letter-spacing: 0.38em; }
+    .desktop-menu ul { gap: 10px; }
+    .desktop-menu a { padding: 10px 11px; font-size: 0.94rem; }
+    .header-cta { padding: 0 14px; font-size: 0.82rem; }
+    .kpi-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; transform: none; }
+    .kpi-card { min-height: 140px; padding: 18px 14px 16px; }
+    .kpi-card strong { font-size: 1.9rem; }
+    .kpi-card span { font-size: 0.78rem; }
+    .benefits-bar { gap: 16px; padding: 20px 24px; width: 96%; }
+    .benefit-text { font-size: 0.96rem; }
+    .benefit-item i { width: 48px; height: 48px; }
+}
+
+/* ── 1024px: Small laptops / large tablets (landscape) ─────── */
+@media (max-width: 1024px) {
+    .kpi-grid {
+        display: flex; gap: 12px; overflow-x: auto; padding: 0 0 10px; transform: none;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .kpi-card { min-width: 220px; scroll-snap-align: start; flex-shrink: 0; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .section-shell { padding: 56px 0; }
+    .hero-title { font-size: clamp(2.4rem, 6vw, 4rem); }
+    .hero-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .hero-lead-card { width: min(320px, calc(100% - 40px)); padding: 18px; }
+    .pricing-inner { padding-left: 3%; padding-right: 3%; }
+    .footer-links { grid-template-columns: repeat(3, 1fr); }
+    .benefits-bar { width: 96%; }
+}
+
+/* ── 860px: Tablets (portrait) ──────────────────────────────── */
+@media (max-width: 860px) {
+    .desktop-menu,
+    .header-actions .header-cta,
+    .header-actions .header-icon { display: none; }
+    .hamburger { display: flex; }
+    header { border-radius: 0 0 22px 22px; }
+    .header-shell { min-height: 64px; width: 96%; }
+    .header-shell::before { top: 10px; }
+    .brand { min-width: auto; }
+    .brand-mark, .brand-mark img { width: 44px; height: 44px; }
+    .brand-copy strong { font-size: 1.14rem; }
+    .brand-copy small { font-size: 0.5rem; letter-spacing: 0.28em; }
+    .hero-meta,
+    .insight-grid, .services-grid, .pricing-grid,
+    .stats-grid, .contact-panel, .footer-links { grid-template-columns: 1fr; }
+    .hero-copy { padding-top: 28px; }
+    .gallery-caption { flex-direction: column; align-items: start; }
+    .gallery-caption { top: auto; bottom: 20px; }
+    .hero-lead-card { top: 18px; right: 18px; width: min(300px, calc(100% - 36px)); }
+    .video-gallery { min-height: clamp(520px, 92vw, 700px); }
+    .service-card { min-height: 340px; }
+    .section-shell, .stats-section { padding: 48px 0; }
+    .hero { padding-top: 10px; }
+    .kpi-grid { gap: 12px; padding-bottom: 10px; }
+    .kpi-card { min-width: 52%; scroll-snap-align: start; flex-shrink: 0; }
+    .benefits-bar {
+        grid-template-columns: 1fr; gap: 14px;
+        width: 96%; padding: 18px; border-radius: 22px;
+    }
+    .benefit-item { padding: 8px; }
+    .benefit-divider { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 44, 27, 0.92), transparent); }
+    .footer-links { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .container,
+    .hero-grid,
+    .insight-grid,
+    .kpi-panel { width: 96%; }
+}
+
+/* ── 640px: Phones (landscape / large portrait) ─────────────── */
+@media (max-width: 640px) {
+    .header-shell,
+    .container,
+    .hero-grid,
+    .insight-grid,
+    .kpi-panel { width: 97% !important; margin: 0 auto; }
+    header { border-radius: 0 0 16px 16px; }
+    .header-shell::before { top: 8px; }
+    .brand-copy strong { font-size: 0.98rem; }
+    .brand-copy small { display: none; }
+    .hero-copy,
+    .pricing-inner,
+    .contact-card,
+    .studio-highlights,
+    .stats-content { padding-left: 4%; padding-right: 4%; }
+    .hero-title { font-size: clamp(2.1rem, 9vw, 3rem); line-height: 0.96; }
+    .section-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .section-shell { padding: 40px 0; }
+    .service-card-content,
+    .studio-story-copy,
+    .contact-mosaic-copy { padding: 4%; }
+    .footer-bottom { flex-direction: column; align-items: start; gap: 10px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .kpi-card { min-width: 70%; min-height: 130px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-meta { grid-template-columns: 1fr; }
+    .hero-lead-card { position: static; width: 100%; margin: 16px 0 0; padding: 4%; }
+    .hero-lead-card h2 { font-size: 1.28rem; }
+    .hero-lead-card input { min-height: 40px; }
+    .btn { padding: 11px 16px; font-size: 0.87rem; }
+    .benefits-bar { width: 97%; padding: 4%; }
+    .benefit-text { font-size: 0.94rem; }
+}
+
+/* ── 480px: Small phones ────────────────────────────────────── */
+@media (max-width: 480px) {
+    .hero-title { font-size: clamp(1.9rem, 8vw, 2.35rem); }
+    .section-title { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+    .kpi-card { min-width: 78%; }
+    .footer-links { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .benefits-bar { padding: 14px; border-radius: 18px; }
+    .benefit-item { gap: 12px; }
+    .benefit-item i { width: 42px; height: 42px; border-radius: 13px; font-size: 1.2rem; }
+    .contact-card { padding: 5% 4%; }
+    .contact-card h3 { font-size: 1.7rem; }
+    .pricing-plan { padding: 5%; }
+    .kpi-card strong { font-size: 1.8rem; }
+    .hero-lead-card form { gap: 6px; }
+}
+
+/* ── Accessibility ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .hero-lead-card { animation: none; }
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

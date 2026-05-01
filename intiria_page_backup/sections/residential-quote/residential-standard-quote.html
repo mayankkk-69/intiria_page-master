@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTER'OR RESIDENTIAL STANDARD PLAN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/../css/all.min.css">
+    <link rel="stylesheet" href="../../css/quote-calculator.css">
+</head>
+<body>
+    <div class="column">
+        <div class="image-container" id="carouselWrapper">
+            <button class="arrow arrow-left" onclick="scrollImages(-1)">&#10094;</button>
+            <div class="scrollable-images" id="scrollableImages">
+                <img src="/intiria_page-master/intiria_page/photos/residential/1.jpeg" alt="Residential Interior 1" onclick="openLightbox(0)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/2.jpeg" alt="Residential Interior 2" onclick="openLightbox(1)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/3.jpeg" alt="Residential Interior 3" onclick="openLightbox(2)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/4.jpeg" alt="Residential Interior 4" onclick="openLightbox(3)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/5.jpeg" alt="Residential Interior 5" onclick="openLightbox(4)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/6.jpeg" alt="Residential Interior 6" onclick="openLightbox(5)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/7.jpeg" alt="Residential Interior 7" onclick="openLightbox(6)">
+                <img src="/intiria_page-master/intiria_page/photos/residential/8.jpeg" alt="Residential Interior 8" onclick="openLightbox(7)">
+            </div>
+            <button class="arrow arrow-right" onclick="scrollImages(1)">&#10095;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+    
+    <div class="column">
+        <h1 style="color: red;">Standard Plan For Residential Projects</h1>
+        <h3>Brief Overview of Our Standard Plan</h3>
+        <p class="justified">Our Standard Plan delivers essential residential interior design services, encompassing comprehensive design consultations, personalized floor plans, and expert project management. We pride ourselves on utilizing high-quality materials and maximizing space efficiency, offering exceptional value as we transform your home into a stylish and comfortable sanctuary.</p>
+        <hr>
+    
+        <div class="dropdown">
+          <button class="dropdown-button" onclick="toggleDropdown('read-more')">Read More <span id="read-more-icon">+</span></button>
+          <div id="read-more" class="dropdown-content">
+            <p class="justified">We offer a comprehensive range of interior design services tailored to fit your budget, ensuring meticulous planning and execution of every project detail:</p>
+            <ul class="justified">
+              <li>Detailed Floor Plans: Precise layouts optimizing space and functionality.</li>
+              <li>Elevation Drawings: Visual representations providing a clear view of the final design.</li>
+              <li>3D Renderings: Realistic visualizations bringing your vision to life.</li>
+              <li>Custom Design Solutions: Tailored approaches meeting your specific needs and preferences.</li>
+              <li>Cost-Effective Planning: High-quality services within your budgetary constraints.</li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+    
+        <div class="dropdown">
+          <button class="dropdown-button" onclick="toggleDropdown('payment-stage')">Payment Stages <span id="payment-stage-icon">+</span></button>
+          <div id="payment-stage" class="dropdown-content">
+            <h4>Stage 1:</h4>
+            <ul class="justified">
+              <li>Initial site visit for accurate measurements</li>
+              <li>Concept layout including furniture placement and Vastu incorporation</li>
+              <li>Concept presentation with reference images for design finalization</li>
+              <li>Plumbing layout</li>
+            </ul>
+            <h4>Stage 2:</h4>
+            <ul class="justified">
+              <li>3D views of living room, toilets, and kitchen (as applicable)</li>
+              <li>Detailed 2D drawings for toilets and kitchens, including electrical layout, flooring, false ceiling, and services</li>
+              <li>2D drawings for tile placement</li>
+              <li>False ceiling and flooring details for living areas</li>
+              <li>Vendor management system implementation</li>
+            </ul>
+            <h4>Stage 3:</h4>
+            <ul class="justified">
+              <li>3D views of bedrooms, children's rooms, and study areas</li>
+              <li>Comprehensive false ceiling, flooring, and electrical details</li>
+            </ul>
+            <h4>Stage 4:</h4>
+            <ul class="justified">
+              <li>Wall paneling details for all rooms</li>
+              <li>Loose and fixed furniture specifications</li>
+              <li>Project management and timeline monitoring</li>
+              <li>Remote consultation via audio/video calls</li>
+            </ul>
+            <h4>Stage 5:</h4>
+            <ul class="justified">
+              <li>Kitchen cabinetry details</li>
+              <li>Final site visit (if required)</li>
+              <li>Color scheme finalization</li>
+              <li>On-site material sample selection</li>
+              <li>Compilation of all design drawings</li>
+              <li>GST invoice issuance</li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+    
+        <div class="dropdown">
+          <button class="dropdown-button" onclick="toggleDropdown('refund-policy')">Refund Policy <span id="refund-policy-icon">+</span></button>
+          <div id="refund-policy" class="dropdown-content">
+            <p class="justified">At ArchitectsHive, we take immense pride in delivering high-quality products and services, with your satisfaction as our utmost priority. Given the nature of our business, we can only accommodate returns under the following circumstances:</p>
+            <ul class="justified">
+              <li>If the delivery of drawings is delayed by more than 15 working days from the agreed-upon transaction date.</li>
+              <li>In case of an incorrect plan or service selection, an exchange may be facilitated with a minimum processing fee of INR 500.</li>
+              <li>No other scenarios beyond those mentioned above will be considered for refunds or returns.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    <div class="column">
+        <div class="slider-container">
+            <div class="total-price" id="total-price">Total Price: ₹0.00</div>
+            <h3>Choose Area:</h3>
+            <input type="range" id="squareFeetSlider" min="0" max="20000" value="0" oninput="updateSquareFeet(this.value)">
+            <div class="input-wrapper">
+                <input type="number" id="squareFeetInput" min="0" max="20000" value="0" oninput="validateAndUpdate(this)">
+                <span class="input-suffix">Sq.Ft.</span>
+            </div>
+            <div class="site-visits" id="site-visits">Total Site Visits: 3</div>
+            <div class="checkbox-container">
+                <div>
+                    <h3><span>Loose Furniture Details:</span></h3>
+                    <label><input type="radio" name="looseFurniture" value="required" onchange="updateAdditionalCosts()"> Required</label>
+                    <label><input type="radio" name="looseFurniture" value="notRequired" checked onchange="updateAdditionalCosts()"> Not Required</label>
+                </div>
+                <div>
+                    <h3><span>Extra Site Visits:</span></h3>
+                    <label><input type="radio" name="extraSiteVisits" value="0" checked onchange="updateAdditionalCosts()"> Not Required</label>
+                    <label><input type="radio" name="extraSiteVisits" value="6750" onchange="updateAdditionalCosts()"> 5 Site Visits (₹6750)</label>
+                    <label><input type="radio" name="extraSiteVisits" value="12500" onchange="updateAdditionalCosts()"> 10 Site Visits (₹12500)</label>
+                    <label><input type="radio" name="extraSiteVisits" value="17250" onchange="updateAdditionalCosts()"> 15 Site Visits (₹17250)</label>
+                    <label><input type="radio" name="extraSiteVisits" value="21000" onchange="updateAdditionalCosts()"> 20 Site Visits (₹21000)</label>
+                </div>
+                <div>
+                    <h3><span>Vastu Incorporation:</span></h3>
+                    <label><input type="radio" name="vastuIncorporation" value="required" onchange="updateAdditionalCosts()"> Required</label>
+                    <label><input type="radio" name="vastuIncorporation" value="notRequired" checked onchange="updateAdditionalCosts()"> Not Required</label>
+                </div>
+            </div>
+            <div class="button-container">
+                <button onclick="payFull()">Pay Full</button>
+                <button onclick="showPartitionPayment()">Payment Partition</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Payment Partition -->
+    <div id="partitionPaymentModal" class="modal">
+        <div class="modal-content">
+            <div id="partition-stages" class="stage-container"></div>
+            <button onclick="hidePartitionPayment()">Close</button>
+        </div>
+    </div>
+
+    <script>
+/* ── Carousel logic ── */
+const carouselImgs = [
+    '/intiria_page-master/intiria_page/photos/residential/1.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/2.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/3.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/4.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/5.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/6.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/7.jpeg',
+    '/intiria_page-master/intiria_page/photos/residential/8.jpeg'
+];
+let carouselIndex = 0;
+
+function buildDots() {
+    const dots = document.getElementById('carouselDots');
+    if (!dots) return;
+    dots.innerHTML = '';
+    carouselImgs.forEach((_, i) => {
+        const d = document.createElement('span');
+        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        d.onclick = () => goToSlide(i);
+        dots.appendChild(d);
+    });
+}
+
+function goToSlide(index) {
+    carouselIndex = ((index % carouselImgs.length) + carouselImgs.length) % carouselImgs.length;
+    const container = document.getElementById('scrollableImages');
+    if (container) container.style.transform = `translateX(-${carouselIndex * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === carouselIndex);
+    });
+}
+
+function scrollImages(direction) {
+    goToSlide(carouselIndex + direction);
+}
+
+buildDots();
+
+/* ── Auto-slide (infinite loop) ── */
+let autoSlideTimer = setInterval(() => scrollImages(1), 3500);
+const carouselEl = document.getElementById('carouselWrapper');
+if (carouselEl) {
+    carouselEl.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+    carouselEl.addEventListener('mouseleave', () => {
+        autoSlideTimer = setInterval(() => scrollImages(1), 3500);
+    });
+}
+
+/* ── Lightbox logic ── */
+let lbIndex = 0;
+
+function openLightbox(index) {
+    lbIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function lbNav(dir) {
+    lbIndex = (lbIndex + dir + carouselImgs.length) % carouselImgs.length;
+    updateLightbox();
+}
+
+function updateLightbox() {
+    document.getElementById('lightboxImg').src = carouselImgs[lbIndex];
+    document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + carouselImgs.length;
+}
+
+// Close lightbox on overlay click
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+});
+
+// Keyboard nav for lightbox
+document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft')  lbNav(-1);
+    if (e.key === 'Escape')     closeLightbox();
+});
+
+// Adding swipe functionality for mobile devices
+let startX;
+let isSwiping = false;
+
+const container = document.querySelector('.scrollable-images');
+
+// Listen for touch events to detect swipes
+container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+});
+
+container.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+
+    if (Math.abs(diffX) > 50) { // Minimum swipe distance
+        if (diffX > 0) {
+            scrollImages(-1); // Swipe right, scroll left
+        } else {
+            scrollImages(1); // Swipe left, scroll right
+        }
+        isSwiping = false; // Reset swipe detection
+    }
+});
+
+container.addEventListener('touchend', () => {
+    isSwiping = false;
+});
+
+
+        function toggleDropdown(id) {
+  const dropdownContent = document.getElementById(id);
+  const icon = document.getElementById(`${id}-icon`);
+  
+  // Toggle between showing and hiding the dropdown content
+  if (dropdownContent.style.display === "" || dropdownContent.style.display === "none") {
+    dropdownContent.style.display = "block";
+    icon.textContent = "-";
+  } else {
+    dropdownContent.style.display = "none";
+    icon.textContent = "+";
+  }
+}
+
+// Ensure all dropdowns are closed by default on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdowns = document.querySelectorAll(".dropdown-content");
+  const icons = document.querySelectorAll("span[id$='-icon']");
+
+  dropdowns.forEach(dropdown => {
+    dropdown.style.display = "none"; // Ensure all are closed
+  });
+
+  icons.forEach(icon => {
+    icon.textContent = "+"; // Set initial icon state
+  });
+});
+
+
+        function updateSquareFeet(value) {
+            document.getElementById('squareFeetInput').value = value;
+            updatePrice(value);
+        }
+
+        function validateAndUpdate(input) {
+            let value = parseInt(input.value, 10);
+            if (isNaN(value)) {
+                value = 0;
+            } else if (value > 20000) {
+                value = 20000;
+            }
+            input.value = value;
+            document.getElementById('squareFeetSlider').value = value;
+            updatePrice(value);
+        }
+
+        function updatePrice(squareFeet) {
+            let basePrice = 0;
+
+            if (squareFeet <= 1000) {
+                basePrice = squareFeet * 30;
+            } else if (squareFeet <= 2500) {
+                basePrice = (1000 * 30) + ((squareFeet - 1000) * 28);
+            } else if (squareFeet <= 10000) {
+                basePrice = (1000 * 30) + (1500 * 28) + ((squareFeet - 2500) * 25);
+            } else {
+                basePrice = (1000 * 30) + (1500 * 28) + (7500 * 25) + ((squareFeet - 10000) * 23);
+            }
+
+            let totalPrice = basePrice;
+
+            const looseFurniture = document.querySelector('input[name="looseFurniture"]:checked').value;
+            if (looseFurniture === "required") {
+                totalPrice += squareFeet * 3;
+            }
+
+            const extraSiteVisits = parseInt(document.querySelector('input[name="extraSiteVisits"]:checked').value, 10);
+            totalPrice += extraSiteVisits;
+
+            const vastuIncorporation = document.querySelector('input[name="vastuIncorporation"]:checked').value;
+            if (vastuIncorporation === "required") {
+                totalPrice += squareFeet * 3;
+            }
+
+            document.getElementById('total-price').textContent = `Total Price: ₹${totalPrice.toLocaleString()}`;
+
+            let siteVisits = 3;
+            if (squareFeet > 1000) {
+                siteVisits = 3 + Math.floor((squareFeet - 500) / 500);
+            }
+            if (siteVisits > 15) {
+                siteVisits = 15;
+            }
+            document.getElementById('site-visits').textContent = `Total Site Visits: ${siteVisits}`;
+        }
+
+        function updateAdditionalCosts() {
+            const squareFeet = parseInt(document.getElementById('squareFeetInput').value, 10);
+            updatePrice(squareFeet);
+        }
+
+        function payFull() {
+            const totalAmount = parseFloat(document.getElementById('total-price').textContent.replace('Total Price: ₹', '').replace(/,/g, ''));
+            var options = {
+                "key": "rzp_live_rhbKw19gbK65Bh", // Replace with your Razorpay key
+                "amount": totalAmount * 100, // Amount in the smallest currency unit (e.g., paise for INR)
+                "currency": "INR",
+                "name": "ArchitectsHive",
+                "description": "Payment Description",
+                "handler": function (response) {
+                    alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": "Customer Name",
+                    "email": "customer@example.com",
+                    "contact": "9876543210"
+                },
+                "theme": {
+                    "color": "#007BFF"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+
+        function showPartitionPayment() {
+            const totalAmount = parseFloat(document.getElementById('total-price').textContent.replace('Total Price: ₹', '').replace(/,/g, ''));
+            const stages = [
+                { stage: 1, percentage: 30, points: ['1st Site Visit for Actual Measurement Purpose.', 'Concept layout including Furniture placement and Vastu Incorporation.', 'Concept PPT (with Ref. Google Images for Selection and design freezing Purpose)', 'Plumbing Layout.'] },
+                { stage: 2, percentage: 26, points: ['3D Views* of Living Room, Toilets and Kitchen (Applicable as Design).', '2D Details Drawings for Toilets and Kitechens including Electrical Layout, Flooring, False Ceiling and Services Drawings (if any)2D Details Drawings for Toilets and Kitechens including Electrical Layout, Flooring, False Ceiling and Services Drawings (if any)', '2D Drawings for Tile fixing Overwalls.', '2D Details of False Ceiling and Flooring for Living Rooms.', 'vendor Management System*.'] },
+                { stage: 3, percentage: 24, points: ['3D Views* of Bedrooms, Children Rooms, Study Rooms.', 'False Ceiling, Flooring and Electrical details of total area.'] },
+                { stage: 4, percentage: 16, points: ['Wall Panelling Details of all Rooms Loose and Fix Furniture Details*.', 'Project Management / Timeline Monitoring.', 'Audio / Video Call Monitoring.'] },
+                { stage: 5, percentage: 4, points: ['Kitchen Cupboard Details.', 'Remaining Site Visit (if any).', 'Colour Combinations / Selection.','On-site Sample Selection.', 'Compiled PDF of all Drawings', 'GST Bill'] }
+            ];
+
+            let stagesHtml = '';
+            stages.forEach(stage => {
+                const amount = (totalAmount * stage.percentage / 100).toFixed(2);
+                stagesHtml += `
+                    <div>
+                        <button class="stage-button" onclick="toggleStageDetails(${stage.stage})">
+                            Stage ${stage.stage}: Pay ₹${amount} <span id="stage${stage.stage}-icon">+</span>
+                        </button>
+                        <div id="stage${stage.stage}-details" class="stage-details">
+                            <ul>
+                                ${stage.points.map(point => `<li>${point}</li>`).join('')}
+                            </ul>
+                            <button onclick="payStage(${amount})">Pay ₹${amount}</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('partition-stages').innerHTML = stagesHtml;
+            document.getElementById('partitionPaymentModal').style.display = 'flex';
+        }
+
+        function hidePartitionPayment() {
+            document.getElementById('partitionPaymentModal').style.display = 'none';
+        }
+
+        function toggleStageDetails(stage) {
+            const details = document.getElementById(`stage${stage}-details`);
+            const icon = document.getElementById(`stage${stage}-icon`);
+            if (details.classList.contains('active')) {
+                details.classList.remove('active');
+                icon.textContent = "+";
+            } else {
+                details.classList.add('active');
+                icon.textContent = "-";
+            }
+        }
+
+        
+
+        function payStage(amount) {
+            var options = {
+                "key": "rzp_live_rhbKw19gbK65Bh", // Replace with your Razorpay key
+                "amount": amount * 100, // Amount in the smallest currency unit (e.g., paise for INR)
+                "currency": "INR",
+                "name": "ArchitectsHive",
+                "description": "Stage Payment",
+                "handler": function (response) {
+                    alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": "Customer Name",
+                    "email": "customer@example.com",
+                    "contact": "9876543210"
+                },
+                "theme": {
+                    "color": "#007BFF"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+
+    // Function to get the current page URL
+    function getPageUrl() {
+        return window.location.href;
+    }
+
+    function shareOnPlatform(platform) {
+        const pageUrl = getPageUrl();
+        let shareUrl = '';
+
+        switch (platform) {
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+                break;
+            case 'twitter':
+                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=Check%20this%20out!`;
+                break;
+            case 'linkedin':
+                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+                break;
+            case 'whatsapp':
+                shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(pageUrl)}`;
+                break;
+            case 'email':
+                shareUrl = `mailto:?subject=Check%20this%20out&body=${encodeURIComponent(pageUrl)}`;
+                break;
+            default:
+                return;
+        }
+
+        window.open(shareUrl, '_blank');
+    }
+
+    // Fix the social sharing listeners by using classes instead of IDs
+    const platforms = ['facebook', 'twitter', 'linkedin', 'whatsapp', 'email'];
+    platforms.forEach(platform => {
+        const el = document.querySelector(`.${platform}`);
+        if (el) {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                shareOnPlatform(platform);
+            });
+        }
+    });
+</script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="../../js/quote_connector.js"></script>
+    <script>
+        loadQuoteContent('res-basic');
+    </script>
+</body>
+</html>

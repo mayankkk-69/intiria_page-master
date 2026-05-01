@@ -1,0 +1,19 @@
+<!-- ══ COMMERCIAL QUOTE FORMS ══ -->
+<section class="inline-quote-section" id="commercial-quote-section">
+    <div class="container">
+        <div class="iq-header reveal">
+            <h2 class="section-title">Commercial Interiors</h2>
+            <p class="section-description">Offices, showrooms, retail spaces, and studios — choose the scope that matches your commercial project.</p>
+        </div>
+        <div class="iq-tabs reveal">
+            <button class="iq-tab iq-tab-active" onclick="switchIQ('com','standard',this)">Standard Plan</button>
+            <button class="iq-tab" onclick="switchIQ('com','premium',this)">Premium Plan <span class="iq-popular">Most Popular</span></button>
+            <button class="iq-tab" onclick="switchIQ('com','elite',this)">Elite Plan</button>
+        </div>
+        <div class="iq-frame-wrap reveal">
+            <iframe id="com-standard-frame"  src="sections/commercial-quote/commercial-standard-quote.html"  class="iq-frame iq-frame-visible" title="Commercial Standard"  scrolling="no" onload="resizeIQ(this)"></iframe>
+            <iframe id="com-premium-frame"   src="sections/commercial-quote/commercial-premium-quote.html"   class="iq-frame"                  title="Commercial Premium"   scrolling="no" onload="resizeIQ(this)"></iframe>
+            <iframe id="com-elite-frame"     src="sections/commercial-quote/commercial-elite-quote.html"     class="iq-frame"                  title="Commercial Elite"     scrolling="no" onload="resizeIQ(this)"></iframe>
+        </div>
+    </div>
+</section>

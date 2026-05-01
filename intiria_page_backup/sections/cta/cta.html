@@ -1,0 +1,73 @@
+<!-- ══════════════════════════════════════════════════════
+   CTA SECTION — HTML
+   - 3 functional buttons
+   - Staggered scroll reveal
+   - Lead capture modal
+ ══════════════════════════════════════════════════════ -->
+
+<!-- Premium CTA Section -->
+<section class="premium-cta" id="cta-section">
+    <div class="cta-ambient-glow left"></div>
+    <div class="cta-ambient-glow right"></div>
+
+    <div class="cta-container">
+        
+        <div class="cta-horizontal-layout reveal" id="ctaHorizontal">
+            
+            <!-- LEFT: General Enquiry Card -->
+            <div class="intake-card">
+                <div class="intake-title">
+                    <i class="fas fa-paper-plane"></i> Submit Details
+                </div>
+                <form id="enquiryForm" class="intake-form">
+                    <input type="text" id="eq-name" placeholder="Full Name*" required>
+                    <div class="phone-input-group">
+                        <span class="country-code">+91</span>
+                        <input type="tel" id="eq-phone" placeholder="Mobile Number*" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+                    <input type="email" id="eq-email" placeholder="Email Address*" required>
+                    <button type="submit" class="btn-intake btn-enquiry">ENQUIRE NOW</button>
+                </form>
+            </div>
+
+            <!-- CENTER: Text Area -->
+            <div class="cta-text-area cta-text-center">
+                <div class="cta-eyebrow">
+                    <span class="cta-line"></span> GET STARTED <span class="cta-line"></span>
+                </div>
+                <h2 class="cta-title">
+                    Transform <br>
+                    <span class="cta-accent">Your Space.</span>
+                </h2>
+               <!--<div class="cta-contact-pill">
+                    <div class="pill-row">
+                        <a href="tel:+917503468992"><i class="fas fa-phone-alt"></i> Studio: +91 75034 68992</a>
+                        <span class="pill-divider"></span>
+                        <a href="tel:+919958600397"><i class="fas fa-phone-alt"></i> Enquiry: +91 99586 00397</a>
+                    </div>
+                    <div class="pill-row">
+                        <a href="mailto:contact@architectshive.com"><i class="fas fa-envelope"></i> contact@architectshive.com</a>
+                    </div>
+                </div>-->
+            </div>
+
+            <!-- RIGHT: WA Location Card -->
+            <div class="intake-card">
+                <div class="intake-title wa-title">
+                    <i class="fab fa-whatsapp"></i> Get Studio Location
+                </div>
+                <form id="whatsappLocationForm" class="intake-form">
+                    <input type="text" id="wa-name" placeholder="Full Name*" required>
+                    <div class="phone-input-group">
+                        <span class="country-code">+91</span>
+                        <input type="tel" id="wa-phone" placeholder="WhatsApp Number*" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+                    <button type="submit" class="btn-intake btn-wa">SEND TO WHATSAPP</button>
+                </form>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+</section>

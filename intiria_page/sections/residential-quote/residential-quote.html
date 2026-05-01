@@ -1,0 +1,19 @@
+<!-- ══ RESIDENTIAL INTERIOR QUOTE FORMS ══ -->
+<section class="inline-quote-section" id="residential-quote-section">
+    <div class="container">
+        <div class="iq-header reveal">
+            <h2 class="section-title">Residential Interior</h2>
+            <p class="section-description">Select your plan and fill below — no calls needed.</p>
+        </div>
+        <div class="iq-tabs reveal">
+            <button class="iq-tab iq-tab-active" onclick="switchIQ('res','standard',this)">Standard Plan</button>
+            <button class="iq-tab" onclick="switchIQ('res','premium',this)">Premium Plan <span class="iq-popular">Most Popular</span></button>
+            <button class="iq-tab" onclick="switchIQ('res','elite',this)">Elite Plan</button>
+        </div>
+        <div class="iq-frame-wrap reveal">
+            <iframe id="res-standard-frame" src="sections/residential-quote/residential-standard-quote.html" class="iq-frame iq-frame-visible" title="Standard Residential" scrolling="no" onload="resizeIQ(this)"></iframe>
+            <iframe id="res-premium-frame"  src="sections/residential-quote/residential-premium-quote.html"  class="iq-frame"                  title="Premium Residential"  scrolling="no" onload="resizeIQ(this)"></iframe>
+            <iframe id="res-elite-frame"    src="sections/residential-quote/residential-elite-quote.html"    class="iq-frame"                  title="Elite Residential"    scrolling="no" onload="resizeIQ(this)"></iframe>
+        </div>
+    </div>
+</section>

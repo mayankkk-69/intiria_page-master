@@ -1,0 +1,19 @@
+<!-- ══ INDUSTRIAL / CONSTRUCTION QUOTE FORMS ══ -->
+<section class="inline-quote-section" id="construction-quote-section">
+    <div class="container">
+        <div class="iq-header reveal">
+            <h2 class="section-title">Industrial & Construction</h2>
+            <p class="section-description">Factories, labs, warehouses, and process-driven facilities — select the scope that matches your project.</p>
+        </div>
+        <div class="iq-tabs reveal">
+            <button class="iq-tab iq-tab-active" onclick="switchIQ('ind','standard',this)">Standard Plan</button>
+            <button class="iq-tab" onclick="switchIQ('ind','premium',this)">Premium Plan <span class="iq-popular">Most Popular</span></button>
+            <button class="iq-tab" onclick="switchIQ('ind','elite',this)">Elite Plan</button>
+        </div>
+        <div class="iq-frame-wrap reveal">
+            <iframe id="ind-standard-frame" src="sections/construction-quote/industrial-standard-quote.html" class="iq-frame iq-frame-visible" title="Industrial Standard" scrolling="no" onload="resizeIQ(this)"></iframe>
+            <iframe id="ind-premium-frame"  src="sections/construction-quote/industrial-premium-quote.html"  class="iq-frame"                  title="Industrial Premium"  scrolling="no" onload="resizeIQ(this)"></iframe>
+            <iframe id="ind-elite-frame"    src="sections/construction-quote/industrial-elite-quote.html"    class="iq-frame"                  title="Industrial Elite"     scrolling="no" onload="resizeIQ(this)"></iframe>
+        </div>
+    </div>
+</section>

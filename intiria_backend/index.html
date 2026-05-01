@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTIRIA Admin - Content Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Core Admin CSS -->
+    <link rel="stylesheet" href="css/admin-core.css">
+    <link rel="stylesheet" href="css/admin-sidebar.css">
+
+    <!-- Section CSS -->
+    </head>
+<body class="ib-admin-body">
+
+    <!-- Sidebar -->
+    <div id="ib-admin-sidebar-root"></div>
+
+    <!-- Main Panel -->
+    <main class="ib-admin-main" id="ib-admin-main">
+
+        <!-- Top Bar -->
+        <header class="ib-admin-topbar">
+            <button class="ib-admin-topbar__toggle" id="ibSidebarToggle" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="ib-admin-topbar__title">
+                <span class="ib-admin-topbar__brand">INTIRIA</span>
+                <span class="ib-admin-topbar__sub">Content Manager</span>
+            </div>
+            <div class="ib-admin-topbar__actions">
+                <a class="ib-admin-topbar__preview-btn" href="../intiria_page/index.html" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Preview Site
+                </a>
+            </div>
+        </header>
+
+        <!-- Section Editor Panels (loaded dynamically) -->
+        <div class="ib-admin-content-area" id="ib-admin-content-area">
+
+            <!-- Each section editor is injected here -->
+            <div id="ib-section-hero"></div>
+            <div id="ib-section-header"></div>
+            <div id="ib-section-kpi"></div>
+            <div id="ib-section-benefits"></div>
+            <div id="ib-section-pricing"></div>
+            <div id="ib-section-studio"></div>
+            <div id="ib-section-industrial"></div>
+            <div id="ib-section-quotes"></div>
+            <div id="ib-section-quote_content_res"></div>
+            <div id="ib-section-quote_content_com"></div>
+            <div id="ib-section-quote_content_ind"></div>
+            <div id="ib-section-cta"></div>
+            <div id="ib-section-footer"></div>
+
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="ib-admin-toast" id="ibAdminToast">
+        <i class="fas fa-check-circle"></i>
+        <span id="ibAdminToastMsg">Changes saved!</span>
+    </div>
+
+    <!-- Core JS -->
+    <script src="js/admin-core.js"></script>
+    <script src="js/admin-sidebar.js"></script>
+    <script>
+        // Modular section loader
+        async function loadAdminSections() {
+            const sections = [
+                { id: 'ib-section-hero',       url: 'sections/hero/hero-editor.html' },
+                { id: 'ib-section-header',     url: 'sections/header/header-editor.html' },
+                { id: 'ib-section-kpi',        url: 'sections/kpi/kpi-editor.html' },
+                { id: 'ib-section-benefits',   url: 'sections/benefits/benefits-editor.html' },
+                { id: 'ib-section-pricing',    url: 'sections/pricing/pricing-editor.html' },
+                { id: 'ib-section-studio',     url: 'sections/studio/studio-editor.html' },
+                { id: 'ib-section-industrial', url: 'sections/industrial/industrial-editor.html' },
+                { id: 'ib-section-quotes',     url: 'sections/quotes/quotes-editor.html' },
+                { id: 'ib-section-quote_content_res', url: 'sections/quote-content-res/quote-content-res-editor.html' },
+                { id: 'ib-section-quote_content_com', url: 'sections/quote-content-com/quote-content-com-editor.html' },
+                { id: 'ib-section-quote_content_ind', url: 'sections/quote-content-ind/quote-content-ind-editor.html' },
+                { id: 'ib-section-cta',        url: 'sections/cta/cta-editor.html' },
+                { id: 'ib-section-footer',     url: 'sections/footer/footer-editor.html' },
+            ];
+
+            const sidebarSection = [
+                { id: 'ib-admin-sidebar-root', url: 'sections/sidebar/sidebar.html' }
+            ];
+
+            const all = [...sidebarSection, ...sections];
+
+            await Promise.all(all.map(sec =>
+                fetch(sec.url)
+                    .then(r => r.ok ? r.text() : `<p style="color:red">Failed to load: ${sec.url}</p>`)
+                    .then(html => { document.getElementById(sec.id).innerHTML = html; })
+            ));
+
+            if (typeof window.ibDecorateAdminIcons === 'function') {
+                window.ibDecorateAdminIcons(document);
+            }
+
+            // Load section JS after DOM is ready
+            const sectionScripts = [
+                'sections/hero/hero-editor.js',
+                'sections/header/header-editor.js',
+                'sections/kpi/kpi-editor.js',
+                'sections/benefits/benefits-editor.js',
+                'sections/pricing/pricing-editor.js',
+                'sections/studio/studio-editor.js',
+                'sections/industrial/industrial-editor.js',
+                'sections/cta/cta-editor.js',
+                'sections/footer/footer-editor.js',
+                'js/admin-nav.js',
+            ];
+            sectionScripts.forEach(src => {
+                const s = document.createElement('script');
+                s.src = src;
+                document.body.appendChild(s);
+            });
+        }
+
+        loadAdminSections();
+    </script>
+</body>
+</html>

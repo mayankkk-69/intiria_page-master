@@ -1,0 +1,22 @@
+{
+    "hero": {
+        "ib-hero-video-path": "videos\/7.mp4",
+        "ib-hero-kicker": "Curated interior design studio",
+        "ib-hero-phrase-1": "hhsdjvbkshbdvsbdkvjbskbvkjsbdvkjbskbdv",
+        "ib-hero-phrase-2": "http:\/\/localhost\/intiria_page-master\/intiria_backend\/index.html",
+        "ib-hero-tagline": "India's Top-Rated Interior Design Studio & Architecture Firm",
+        "ib-hero-subtitle": "Intiria is a leading interior design firm in Delhi NCR, delivering thoughtfully designed residential and commercial spaces that balance aesthetics, functionality, and execution precision.",
+        "ib-hero-cta-text": "Explore Projects",
+        "ib-hero-form-title": "Start with INTIRIA",
+        "ib-hero-form-desc": "Share details and the team will guide you to our packages.",
+        "ib-hero-ben1-accent": "30 Days",
+        "ib-hero-ben1-text": "Guaranteed Delivery",
+        "ib-hero-ben1-icon": "fa-calendar-check",
+        "ib-hero-ben2-accent": "Online",
+        "ib-hero-ben2-text": "Secure Payments",
+        "ib-hero-ben2-icon": "fa-lock",
+        "ib-hero-ben3-accent": "24*7",
+        "ib-hero-ben3-text": "Customer Support",
+        "ib-hero-ben3-icon": "fa-headset"
+    }
+}

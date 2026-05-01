@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="INTIRIA by ArchitectsHive offers premium interior design packages.">
+    <title>INTIRIA | Modular Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="photos/Hive Tag line 11 (1).png">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/mobile.css">    
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="sections/header/header.css">
+    <link rel="stylesheet" href="sections/hero/hero.css">
+    <link rel="stylesheet" href="sections/kpi/kpi.css">
+    <link rel="stylesheet" href="sections/benefits/benefits.css">
+    <link rel="stylesheet" href="sections/pricing/pricing.css">
+    <link rel="stylesheet" href="sections/studio/studio.css">
+    <link rel="stylesheet" href="sections/contact/contact.css">
+    <link rel="stylesheet" href="sections/industrial/industrial.css">
+    <link rel="stylesheet" href="sections/cta/cta.css">
+    <link rel="stylesheet" href="sections/footer/footer.css">
+</head>
+<body>
+    <div id="header-root"></div>
+    <main id="top">
+        <div id="hero-root"></div>
+        <div id="kpi-root"></div>
+        <div id="benefits-root"></div>
+        <div id="studio-root"></div>
+        <div id="contact-root"></div>
+        <div id="industrial-root"></div>
+        <div id="pricing-root"></div>
+        <div id="cta-root"></div>
+    </main>
+    <div id="footer-root"></div>
+
+    <!-- Component Loader -->
+    <script>
+        async function loadModularSections() {
+            const sectionsToLoad = [
+                { id: 'header-root', url: 'sections/header/header.html' },
+                { id: 'hero-root', url: 'sections/hero/hero.html' },
+                { id: 'kpi-root', url: 'sections/kpi/kpi.html' },
+                { id: 'benefits-root', url: 'sections/benefits/benefits.html' },
+                { id: 'studio-root', url: 'sections/studio/studio.html' },
+                { id: 'contact-root', url: 'sections/contact/contact.html' },
+                { id: 'industrial-root', url: 'sections/industrial/industrial.html' },
+                { id: 'pricing-root', url: 'sections/pricing/pricing.html' },
+                { id: 'cta-root', url: 'sections/cta/cta.html' },
+                { id: 'footer-root', url: 'sections/footer/footer.html' }
+            ];
+
+            const promises = sectionsToLoad.map(sec => 
+                fetch(sec.url)
+                    .then(res => res.text())
+                    .then(html => {
+                        document.getElementById(sec.id).innerHTML = html;
+                    })
+            );
+
+            await Promise.all(promises);
+            console.log("All modular DOM sections loaded.");
+            
+            // Re-initialize global JS (sliders, observers, etc) after DOM is built
+            const script = document.createElement('script');
+            script.src = 'js/main.js';
+            document.body.appendChild(script);
+            
+            // Load component specific JS
+            const componentScripts = [
+                'sections/header/header.js', 'sections/hero/hero.js', 'sections/kpi/kpi.js', 'sections/benefits/benefits.js', 'sections/pricing/pricing.js', 'sections/studio/studio.js', 'sections/contact/contact.js', 'sections/industrial/industrial.js', 'sections/cta/cta.js', 'sections/footer/footer.js'
+            ];
+            componentScripts.forEach(src => {
+                const s = document.createElement('script');
+                s.src = src;
+                document.body.appendChild(s);
+            });
+        }
+        
+        // Execute loader
+        loadModularSections();
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<div class="ib-editor-card" id="ib-industrial-editor-card">
+    <div class="ib-editor-card__head" data-card="ib-industrial-editor-card">
+        <div class="ib-editor-card__head-left">
+            <div class="ib-editor-card__icon"><i class="fas fa-industry"></i></div>
+            <div>
+                <div class="ib-editor-card__title">Industrial Section</div>
+                <div class="ib-editor-card__subtitle">Industrial/Commercial interiors headline, text and images</div>
+            </div>
+        </div>
+        <i class="fas fa-chevron-down ib-editor-card__chevron"></i>
+    </div>
+
+    <div class="ib-editor-card__body">
+        <div class="ib-row-label">Section Copy</div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-ind-eyebrow">Eyebrow</label>
+            <input class="ib-form-input" id="ib-ind-eyebrow" type="text" value="Industrial & Commercial">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-ind-title">Title</label>
+            <input class="ib-form-input" id="ib-ind-title" type="text" value="Spaces built for performance and presence.">
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-ind-desc">Description</label>
+            <textarea class="ib-form-textarea" id="ib-ind-desc">From factories and warehouses to corporate showrooms, Intiria delivers industrial interiors that combine function, safety, and visual impact.</textarea>
+        </div>
+
+        <hr class="ib-section-divider">
+
+        <div class="ib-row-label">Section Images</div>
+        <div class="ib-industrial-editor__img-row">
+            <div class="ib-form-group">
+                <label class="ib-form-label">Main Feature Image</label>
+                <div class="ib-upload-box">
+                    <div class="ib-upload-box__icon"><i class="fas fa-image"></i></div>
+                    <div class="ib-upload-box__label"><span>Upload</span> feature image</div>
+                    <input type="file" id="ib-ind-img-main" accept="image/*">
+                </div>
+                <div class="ib-preview-strip" id="ib-ind-img-main-preview"></div>
+            </div>
+            <div class="ib-form-group">
+                <label class="ib-form-label">Secondary Image</label>
+                <div class="ib-upload-box">
+                    <div class="ib-upload-box__icon"><i class="fas fa-image"></i></div>
+                    <div class="ib-upload-box__label"><span>Upload</span> secondary image</div>
+                    <input type="file" id="ib-ind-img-secondary" accept="image/*">
+                </div>
+                <div class="ib-preview-strip" id="ib-ind-img-secondary-preview"></div>
+            </div>
+        </div>
+        <div class="ib-form-group">
+            <label class="ib-form-label" for="ib-ind-img-path-main">Main Image Path</label>
+            <input class="ib-form-input" id="ib-ind-img-path-main" type="text" placeholder="photos/industrial-main.jpg">
+        </div>
+
+        <hr class="ib-section-divider">
+
+        <div class="ib-row-label">Visibility</div>
+        <div class="ib-toggle-row">
+            <div class="ib-toggle-info">
+                <h4>Show Industrial Section</h4>
+                <p>Toggle to enable or hide this section on the live page</p>
+            </div>
+            <label class="ib-toggle">
+                <input type="checkbox" id="ib-ind-visible" checked>
+                <span class="ib-toggle__track"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="ib-editor-card__footer">
+        <button class="ib-btn-secondary" onclick="ibResetSection('industrial')"><i class="fas fa-undo"></i> Reset</button>
+        <button class="ib-btn-save" onclick="ibSaveSection('industrial')"><i class="fas fa-save"></i> Save Industrial</button>
+    </div>
+</div>
