@@ -26,33 +26,67 @@
     /* ── 2. Enquiry Form Handler ── */
     const eqForm = document.getElementById('enquiryForm');
     if (eqForm) {
-        eqForm.addEventListener('submit', (e) => {
+        eqForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const submitBtn = eqForm.querySelector('.btn-enquiry');
+            const originalText = submitBtn ? submitBtn.textContent : 'ENQUIRE NOW';
+            
             if (submitBtn) {
-                submitBtn.textContent = 'HEARING FROM US SOON';
-                submitBtn.style.background = 'rgba(255,255,255,0.1)';
-                submitBtn.style.color = '#fff';
-                submitBtn.style.borderColor = 'transparent';
+                submitBtn.textContent = 'SENDING...';
                 submitBtn.disabled = true;
             }
 
-            setTimeout(() => {
-                eqForm.reset();
+            try {
+                const formData = new FormData(eqForm);
+                const res = await fetch('api/save_hero_enquiry.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                let data;
+                try {
+                    data = await res.json();
+                } catch(err) {
+                    data = { success: false, message: 'Server error' };
+                }
+                
+                if (data.success) {
+                    if (submitBtn) {
+                        submitBtn.textContent = 'HEARING FROM US SOON';
+                        submitBtn.style.background = 'rgba(255,255,255,0.1)';
+                        submitBtn.style.color = '#fff';
+                        submitBtn.style.borderColor = 'transparent';
+                    }
+                    setTimeout(() => {
+                        eqForm.reset();
+                        if (submitBtn) {
+                            submitBtn.textContent = originalText;
+                            submitBtn.style = '';
+                            submitBtn.disabled = false;
+                        }
+                    }, 3000);
+                } else {
+                    alert('Error: ' + (data.message || 'Unknown error occurred.'));
+                    if (submitBtn) {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again.');
                 if (submitBtn) {
-                    submitBtn.textContent = 'ENQUIRE NOW';
-                    submitBtn.style = '';
+                    submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
                 }
-            }, 3000);
+            }
         });
     }
 
     /* ── 3. WhatsApp Form Handler ── */
     const waForm = document.getElementById('whatsappLocationForm');
     if (waForm) {
-        waForm.addEventListener('submit', (e) => {
+        waForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const nameInput = document.getElementById('wa-name');
@@ -65,17 +99,30 @@
             const whatsappUrl = `https://wa.me/917503468992?text=${encodeURIComponent(message)}`;
 
             const submitBtn = waForm.querySelector('.btn-wa');
+            const originalText = submitBtn ? submitBtn.textContent : 'SEND TO WHATSAPP';
+            
             if (submitBtn) {
                 submitBtn.textContent = 'OPENING WA...';
+                submitBtn.disabled = true;
             }
 
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-                waForm.reset();
-                if (submitBtn) {
-                    submitBtn.textContent = 'SEND TO WHATSAPP';
-                }
-            }, 600);
+            try {
+                const formData = new FormData(waForm);
+                // Do not await this fetch, so window.open executes synchronously!
+                fetch('api/save_whatsapp_lead.php', {
+                    method: 'POST',
+                    body: formData
+                }).catch(err => console.error("Failed to save WA lead:", err));
+            } catch (err) {
+                console.error("Failed to setup WA lead save:", err);
+            }
+
+            window.open(whatsappUrl, '_blank');
+            waForm.reset();
+            if (submitBtn) {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 

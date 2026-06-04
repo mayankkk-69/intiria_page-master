@@ -332,3 +332,84 @@ window.switchIQ = function(group, plan, btn) {
     btn.closest('.iq-tabs').querySelectorAll('.iq-tab').forEach(t => t.classList.remove('iq-tab-active'));
     btn.classList.add('iq-tab-active');
 };
+
+// Global function for the booking modal form submission
+window.submitEnquiry = async function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const submitBtn = form.querySelector('.btn-submit');
+    const originalText = submitBtn.innerText;
+    
+    submitBtn.innerText = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+        const formData = new FormData(form);
+        const res = await fetch('api/save_enquiry.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        let data;
+        try {
+            data = await res.json();
+        } catch(err) {
+            data = { success: false, message: 'Server error' };
+        }
+        
+        if (data.success) {
+            alert('Booking successful! We will contact you shortly.');
+            form.reset();
+            // In case closeBookingModal doesn't exist globally
+            const modal = document.getElementById('booking-modal');
+            if (modal) modal.classList.remove('active');
+        } else {
+            alert('Error: ' + (data.message || 'Unknown error occurred.'));
+        }
+    } catch (e) {
+        alert('An error occurred while submitting your enquiry. Please try again.');
+        console.error(e);
+    } finally {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+    }
+};
+
+// Global function for the hero section form submission
+window.submitHeroEnquiry = async function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const submitBtn = form.querySelector('.btn-submit');
+    const originalText = submitBtn.innerText;
+    
+    submitBtn.innerText = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+        const formData = new FormData(form);
+        const res = await fetch('api/save_hero_enquiry.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        let data;
+        try {
+            data = await res.json();
+        } catch(err) {
+            data = { success: false, message: 'Server error' };
+        }
+        
+        if (data.success) {
+            alert('Booking successful! We will contact you shortly.');
+            form.reset();
+        } else {
+            alert('Error: ' + (data.message || 'Unknown error occurred.'));
+        }
+    } catch (e) {
+        alert('An error occurred while submitting your enquiry. Please try again.');
+        console.error(e);
+    } finally {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+    }
+};

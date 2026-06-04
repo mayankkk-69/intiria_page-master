@@ -1,0 +1,1 @@
+UPDATE intiria_master.hero SET subtitle = '"To be the Best Interior Designer for homes and commercial spaces, delivering outstanding design solutions that combine aesthetics, functionality, and sustainability."' WHERE id = 1;

@@ -1,0 +1,29 @@
+<main id="top">
+    <!-- HERO SECTION -->
+    <section class="projects-hero" aria-label="Projects hero">
+        <div class="projects-hero-bg"></div>
+        <div class="projects-hero-content">
+            <div class="projects-eyebrow">Our Portfolio</div>
+            <h1>Our <em>Projects</em></h1>
+            <p>Explore our premium interior design and modular architecture deliverables across Delhi NCR. From luxury residencies in Gurugram to state-of-the-art corporate offices and specialist medical clinics, every project is a testament to execution precision.</p>
+            <div class="badge-pill">
+                <i class="fas fa-shield-alt"></i>
+                Plans start only after client approval
+            </div>
+            <div class="projects-hero-actions">
+                <button class="btn-projects-primary" onclick="document.getElementById('projects-gallery').scrollIntoView({behavior:'smooth'})">
+                    Browse Projects <i class="fas fa-arrow-down"></i>
+                </button>
+                <a href="index.html#residential-pricing" class="btn-projects-secondary">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS GALLERY — dynamically populated by projects_loader.js -->
+    <section class="projects-list" id="projects-gallery">
+        <div class="container">
+            <!-- Cards injected here by projects_loader.js -->
+        </div>
+    </section>
+
+</main>

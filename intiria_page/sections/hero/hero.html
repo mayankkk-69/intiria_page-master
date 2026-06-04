@@ -6,7 +6,7 @@
         <div class="hero-bg-overlay new-overlay"></div>
         <div class="container new-hero-layout">
             <div class="hero-left-content">
-                <div class="hero-kicker hero-fade-up" style="animation-delay:0.1s">Curated interior design studio</div>
+                <div class="hero-kicker hero-fade-up" style="animation-delay:0.1s">Luxury, Functionality, and Value—All in One Design.</div>
                 <h1 class="hero-title hero-fade-up" style="animation-delay:0.25s">
                     <div class="typewriter-phrase" style="display: none;">
                         Spaces Designed with <span class="text-red" data-highlight>Presence, </span>Calm & Impact.
@@ -15,10 +15,10 @@
                         Delhi NCR's Most Trusted <span class="text-red" data-highlight>Interior Design Studio</span>
                     </div>
                 </h1>
-                <div class="hero-tagline hero-fade-up" style="animation-delay:0.35s">India's Top-Rated Interior Design Studio & Architecture Firm</div>
-                <p class="hero-subtitle hero-fade-up" style="animation-delay:0.45s">Intiria is a leading interior design firm in Delhi NCR, delivering thoughtfully designed residential and commercial spaces that balance aesthetics, functionality, and execution precision.</p>
+                <div class="hero-tagline hero-fade-up" style="animation-delay:0.35s">Fastest Growing Interior Designer Firm in Delhi NCR</div>
+                <p class="hero-subtitle hero-fade-up" style="animation-delay:0.45s">"To be the Best Interior Designer for homes and commercial spaces, delivering outstanding design solutions that combine aesthetics, functionality, and sustainability."</p>
                 <div class="hero-actions-new hero-fade-up" style="animation-delay:0.65s">
-                    <a class="btn btn-primary btn-red" href="#residential-pricing">Explore Projects</a>
+                    <a class="btn btn-primary btn-red" href="#residential-pricing">Explore Plans</a>
                 </div>
             </div>
 
@@ -29,19 +29,19 @@
                         <div class="underline"></div>
                         <p style="color: #e0e0e0; font-size: 0.75rem; margin-top: 8px; line-height: 1.35;">Share details and the team will guide you to our packages.</p>
                     </div>
-                    <form name="hero-query" method="POST" data-netlify="true" class="new-hero-form">
+                    <form name="hero-query" onsubmit="submitHeroEnquiry(event)" class="new-hero-form">
                         <input type="hidden" name="form-name" value="hero-query">
                         <div class="input-wrap">
                             <i class="fas fa-user icon-red"></i>
-                            <input type="text" name="fullname" placeholder="Full Name*" required>
+                            <input type="text" name="fullname" placeholder="Full Name*" required autocomplete="name">
                         </div>
                         <div class="input-wrap">
                             <i class="fas fa-phone-alt icon-red"></i>
-                            <input type="tel" name="mobile" placeholder="Mobile Number*" required>
+                            <input type="tel" name="mobile" placeholder="Mobile Number*" required autocomplete="tel">
                         </div>
                         <div class="input-wrap">
                             <i class="fas fa-envelope icon-red"></i>
-                            <input type="email" name="email" placeholder="Email*" required>
+                            <input type="email" name="email" placeholder="Email*" required autocomplete="email">
                         </div>
                         <button type="submit" class="btn btn-primary btn-red btn-submit">Send Enquiry</button>
                     </form>

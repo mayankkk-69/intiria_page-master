@@ -1,0 +1,212 @@
+/* ══════════════════════════════════════════════════════
+   BRANDS SECTION — Exact match to reference design
+══════════════════════════════════════════════════════ */
+
+.brands-section {
+    background: #faf7f3;
+    padding: 56px 0 48px;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(43, 31, 24, 0.06);
+    border-bottom: 1px solid rgba(43, 31, 24, 0.06);
+}
+
+.brands-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ── Heading — stacked left column ───────────────── */
+.brands-heading {
+    padding: 0 40px;
+}
+
+.brands-heading > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 540px;
+    gap: 6px;
+}
+
+.brands-heading .eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c0392b;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.brands-heading .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: #c0392b;
+    opacity: 0.7;
+}
+
+.brands-heading .section-title {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    color: #1c1209;
+    margin-bottom: 6px;
+    line-height: 1.15;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.brands-heading .section-description {
+    font-size: 0.8rem;
+    color: #8a7b72;
+    line-height: 1.75;
+    max-width: 480px;
+    margin-top: 2px;
+}
+
+/* ── Marquee wrapper ─────────────────────────────── */
+.brands-marquee {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2px 0 6px;
+    mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 3%,
+        black 97%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 3%,
+        black 97%,
+        transparent 100%
+    );
+}
+
+/* ── Tracks ──────────────────────────────────────── */
+.brands-track {
+    display: flex;
+    align-items: center;  /* prevents cards from stretching to track height */
+    gap: 10px;
+    width: max-content;
+    animation: brands-scroll 40s linear infinite;
+    will-change: transform;
+}
+
+.brands-track-reverse {
+    animation-direction: reverse;
+    animation-duration: 52s;
+}
+
+.brands-track-3 {
+    animation-duration: 32s;
+}
+
+@keyframes brands-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.brands-track:hover {
+    animation-play-state: paused;
+}
+
+/* ── Logo Cards — STRICT uniform fixed size ─────── */
+.brand-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center; /* don't stretch inside track */
+
+    background: #e2dbd3;
+    border: 1px solid #d4cdc3;
+    border-radius: 8px;
+    padding: 8px 14px;
+
+    /* Triple-lock height so no image can expand the card */
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
+
+    /* Triple-lock width */
+    flex: 0 0 144px;
+    width: 144px;
+    min-width: 0;
+    max-width: 144px;
+
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.brand-logo-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: #c4bcae;
+}
+
+.brand-logo-card img {
+    /* Let image scale DOWN to max constraints — never push card open */
+    width: auto;
+    height: auto;
+    max-height: 38px;
+    max-width: 116px;
+    object-fit: contain;
+    mix-blend-mode: normal;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.22s ease;
+}
+
+.brand-logo-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 900px) {
+    .brands-heading { padding: 0 24px; }
+    .brands-heading > div { max-width: 100%; }
+    .brands-heading .section-description { max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .brands-section { padding: 40px 0 32px; }
+    .brands-shell { gap: 20px; }
+    .brands-marquee { gap: 8px; }
+    .brands-track { gap: 8px; }
+    .brand-logo-card {
+        height: 50px;
+        width: 124px;
+        min-width: 124px;
+        max-width: 124px;
+        border-radius: 6px;
+    }
+    .brand-logo-card img {
+        max-height: 32px;
+        max-width: 96px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brands-section { padding: 28px 0 24px; }
+    .brands-heading { padding: 0 14px; }
+    .brand-logo-card {
+        height: 44px;
+        width: 108px;
+        min-width: 108px;
+        max-width: 108px;
+        padding: 6px 10px;
+    }
+    .brand-logo-card img {
+        max-height: 28px;
+        max-width: 80px;
+    }
+}

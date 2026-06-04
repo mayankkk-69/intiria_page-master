@@ -20,12 +20,12 @@
                     <i class="fas fa-paper-plane"></i> Submit Details
                 </div>
                 <form id="enquiryForm" class="intake-form">
-                    <input type="text" id="eq-name" placeholder="Full Name*" required>
+                    <input type="text" id="eq-name" name="fullname" placeholder="Full Name*" required autocomplete="name">
                     <div class="phone-input-group">
                         <span class="country-code">+91</span>
-                        <input type="tel" id="eq-phone" placeholder="Mobile Number*" pattern="[0-9]{10}" maxlength="10" required>
+                        <input type="tel" id="eq-phone" name="mobile" placeholder="Mobile Number*" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
                     </div>
-                    <input type="email" id="eq-email" placeholder="Email Address*" required>
+                    <input type="email" id="eq-email" name="email" placeholder="Email Address*" required autocomplete="email">
                     <button type="submit" class="btn-intake btn-enquiry">ENQUIRE NOW</button>
                 </form>
             </div>
@@ -48,10 +48,10 @@
                     <i class="fab fa-whatsapp"></i> Get Studio Location
                 </div>
                 <form id="whatsappLocationForm" class="intake-form">
-                    <input type="text" id="wa-name" placeholder="Full Name*" required>
+                    <input type="text" id="wa-name" name="fullname" placeholder="Full Name*" required autocomplete="name">
                     <div class="phone-input-group">
                         <span class="country-code">+91</span>
-                        <input type="tel" id="wa-phone" placeholder="WhatsApp Number*" pattern="[0-9]{10}" maxlength="10" required>
+                        <input type="tel" id="wa-phone" name="whatsapp_number" placeholder="WhatsApp Number*" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
                     </div>
                     <button type="submit" class="btn-intake btn-wa">SEND TO WHATSAPP</button>
                 </form>

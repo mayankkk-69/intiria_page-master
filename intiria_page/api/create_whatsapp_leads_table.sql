@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS whatsapp_leads (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(255) NOT NULL,
+    whatsapp_number VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,30 @@
+<!-- Booking Modal Overlay -->
+<div class="form-overlay" id="booking-modal">
+    <aside class="hero-form-card" style="position: relative; max-width: 400px; width: 100%; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+        <button class="close-form" onclick="closeBookingModal()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10;">✕</button>
+        <div class="form-header">
+            <h2>Start with INTIRIA</h2>
+            <div class="underline"></div>
+            <p style="color: #e0e0e0; font-size: 0.75rem; margin-top: 8px; line-height: 1.35;">Share details and the team will guide you to our packages.</p>
+        </div>
+        <form name="pricing-query" onsubmit="submitEnquiry(event)" class="new-hero-form">
+            <div class="input-wrap">
+                <i class="fas fa-user icon-red"></i>
+                <input type="text" name="fullname" placeholder="Full Name*" required autocomplete="name">
+            </div>
+            <div class="input-wrap">
+                <i class="fas fa-phone-alt icon-red"></i>
+                <input type="tel" name="mobile" placeholder="Mobile Number*" required autocomplete="tel" pattern="[0-9]{10}" maxlength="10">
+            </div>
+            <div class="input-wrap">
+                <i class="fas fa-envelope icon-red"></i>
+                <input type="email" name="email" placeholder="Email*" required autocomplete="email">
+            </div>
+            <div class="input-wrap">
+                <i class="fas fa-map-marker-alt icon-red"></i>
+                <input type="text" name="address" placeholder="Site Address*" required autocomplete="street-address">
+            </div>
+            <button type="submit" class="btn btn-primary btn-red btn-submit">Book Now</button>
+        </form>
+    </aside>
+</div>

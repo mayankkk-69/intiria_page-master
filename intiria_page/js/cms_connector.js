@@ -6,8 +6,8 @@ async function loadCMSData() {
     try {
         // Dynamically find the backend API depending on where index.html is located
         const basePath = window.location.pathname.includes('/intiria_page/') 
-            ? '../intiria_backend/api/save.php' 
-            : 'intiria_backend/api/save.php';
+            ? '../intiria_page/api/fetch_db.php' 
+            : 'api/fetch_db.php';
             
         const response = await fetch(basePath);
         if (!response.ok) throw new Error('Network response was not ok');
@@ -34,6 +34,7 @@ async function loadCMSData() {
         };
 
         // --- 1. HERO SECTION ---
+        /* 
         if (db.hero) {
             const h = db.hero;
             updateText('.hero-kicker', h['ib-hero-kicker']);
@@ -80,6 +81,7 @@ async function loadCMSData() {
                 if (h['ib-hero-ben3-icon']) benItems[2].querySelector('.ben-icon i').className = `fas ${h['ib-hero-ben3-icon']}`;
             }
         }
+        */
 
         // --- 2. KPI SECTION ---
         if (db.kpi) {
@@ -144,7 +146,7 @@ async function loadCMSData() {
             updateHtml('.cta-title', c['ib-cta-title']);
             
             updateText('#enquiryForm .btn-enquiry', c['ib-cta-btn-text']);
-            updateText('.intake-card:first-child .intake-title', `<i class="fas fa-paper-plane"></i> ` + (c['ib-cta-form-title'] || 'Submit Details'));
+            updateHtml('.intake-card:first-child .intake-title', `<i class="fas fa-paper-plane"></i> ` + (c['ib-cta-form-title'] || 'Submit Details'));
             
             updateHtml('.wa-title', `<i class="fab fa-whatsapp"></i> ` + (c['ib-cta-wa-title'] || 'Get Studio Location'));
             updateText('#whatsappLocationForm .btn-wa', c['ib-cta-wa-btn']);
@@ -277,6 +279,38 @@ async function loadCMSData() {
             if (q['ib-quotes-ind-tab3']) updateText('#construction-quote-section .iq-tabs button:nth-child(3)', q['ib-quotes-ind-tab3']);
         }
         
+        // --- 10. BRANDS SECTION ---
+        if (db.brands && db.brands.brands_list) {
+            const allBrands = db.brands.brands_list;
+            const third = Math.ceil(allBrands.length / 3);
+            const row1 = allBrands.slice(0, third);
+            const row2 = allBrands.slice(third, third * 2);
+            const row3 = allBrands.slice(third * 2);
+
+            function buildTrack(brands) {
+                let html = '';
+                [brands, brands, brands, brands, brands, brands, brands, brands].forEach((set, idx) => {
+                    set.forEach(brand => {
+                        const ariaHidden = idx > 0 ? ' aria-hidden="true"' : '';
+                        const alt = idx === 0 ? (brand.name || '') : '';
+                        const src = brand.logo || '';
+                        if (src && src.trim() !== '') {
+                            html += `<div class="brand-logo-card"${ariaHidden}><img src="${src}" alt="${alt}" loading="eager" onerror="this.parentElement.style.display='none'"></div>`;
+                        }
+                    });
+                });
+                return html;
+            }
+
+            const track1 = document.getElementById('brands-track-1');
+            const track2 = document.getElementById('brands-track-2');
+            const track3 = document.getElementById('brands-track-3');
+
+            if (track1) track1.innerHTML = buildTrack(row1);
+            if (track2) track2.innerHTML = buildTrack(row2);
+            if (track3) track3.innerHTML = buildTrack(row3);
+        }
+
         console.log("CMS Data loaded and applied to frontend!");
         
     } catch (err) {

@@ -17,6 +17,7 @@
     
     <!-- Component CSS -->
     <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="sections/brands/brands.css">
     <script>
         // Stub for resizeIQ to handle asynchronous loading of main.js
         window.resizeIQ = function(frame) {
@@ -38,46 +39,74 @@
         <div id="kpi-root"></div>
         <div id="pricing-root"></div>
         <div id="residential-quote-root"></div>
-        <div id="commercial-quote-root"></div>
-        <div id="construction-quote-root"></div>
+        <div id="brands-root"></div>
         <div id="cta-root"></div>
     </main>
     <div id="footer-root"></div>
+    <div id="booking-modal-root"></div>
 
     <!-- Component Loader -->
     <script>
+        // Booking Modal Logic
+        function openBookingModal() {
+            document.getElementById('booking-modal').classList.add('active');
+        }
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.remove('active');
+        }
+        
+        // Setup modal click listener after sections load
+        function setupBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            if(modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeBookingModal();
+                    }
+                });
+            }
+        }
+
         async function loadModularSections() {
             const sectionsToLoad = [
-                { id: 'header-root', url: 'sections/header/header.html' },
-                { id: 'hero-root', url: 'sections/hero/hero.html' },
-                { id: 'kpi-root', url: 'sections/kpi/kpi.html' },
-                { id: 'pricing-root', url: 'sections/pricing/pricing.html' },
+                { id: 'header-root',            url: 'sections/header/header.html' },
+                { id: 'hero-root',              url: 'sections/hero/hero.html' },
+                { id: 'kpi-root',               url: 'sections/kpi/kpi.html' },
+                { id: 'pricing-root',           url: 'sections/pricing/pricing.html' },
                 { id: 'residential-quote-root', url: 'sections/residential-quote/residential-quote.html' },
-                { id: 'commercial-quote-root', url: 'sections/commercial-quote/commercial-quote.html' },
-                { id: 'construction-quote-root', url: 'sections/industrial-quote/construction-quote.html' },
-                { id: 'cta-root', url: 'sections/cta/cta.html' },
-                { id: 'footer-root', url: 'sections/footer/footer.html' }
+                { id: 'brands-root',            url: 'sections/brands/brands.html' },
+                { id: 'cta-root',               url: 'sections/cta/cta.html' },
+                { id: 'footer-root',            url: 'sections/footer/footer.html' },
+                { id: 'booking-modal-root',     url: 'sections/booking-modal/booking-modal.html' }
             ];
 
-            const promises = sectionsToLoad.map(sec => 
+            const promises = sectionsToLoad.map(sec =>
                 fetch(sec.url)
-                    .then(res => res.text())
-                    .then(html => {
-                        document.getElementById(sec.id).innerHTML = html;
+                    .then(res => {
+                        if (!res.ok) throw new Error(`Failed to load ${sec.url}`);
+                        return res.text();
                     })
+                    .then(html => {
+                        const el = document.getElementById(sec.id);
+                        if (el) el.innerHTML = html;
+                    })
+                    .catch(err => console.warn(`[loader] Skipping ${sec.url}:`, err.message))
             );
 
             await Promise.all(promises);
             console.log("All modular DOM sections loaded.");
-            
-            // Re-initialize global JS (sliders, observers, etc) after DOM is built
+            setupBookingModal();
+
+            // Re-initialize global JS after DOM is built
             const script = document.createElement('script');
             script.src = 'js/main.js';
             document.body.appendChild(script);
-            
+
             // Load component specific JS
             const componentScripts = [
-                'sections/header/header.js', 'sections/hero/hero.js', 'sections/kpi/kpi.js', 'sections/pricing/pricing.js', 'sections/cta/cta.js', 'sections/footer/footer.js', 'js/cms_connector.js'
+                'sections/header/header.js', 'sections/hero/hero.js', 'sections/kpi/kpi.js',
+                'sections/pricing/pricing.js', 'sections/cta/cta.js', 'sections/footer/footer.js',
+                'js/cms_connector.js', 'js/brands_loader.js'
             ];
             componentScripts.forEach(src => {
                 const s = document.createElement('script');
@@ -85,7 +114,7 @@
                 document.body.appendChild(s);
             });
         }
-        
+
         // Execute loader
         loadModularSections();
     </script>
