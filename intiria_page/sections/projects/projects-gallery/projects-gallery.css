@@ -1,0 +1,307 @@
+/* ============================================================
+   projects-gallery.css — Modular Projects Gallery Styles
+   ============================================================ */
+
+.proj-gallery-section {
+    padding: 80px 0 90px;
+    background: linear-gradient(
+        180deg,
+        rgba(244, 239, 232, 0) 0%,
+        rgba(244, 239, 232, 0.5) 100%
+    );
+}
+
+/* Category Filtering Tabs */
+.proj-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+}
+
+.proj-tab {
+    padding: 11px 26px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(77, 52, 36, 0.14);
+    background: rgba(255, 250, 245, 0.75);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 240ms ease;
+}
+
+.proj-tab:hover {
+    border-color: rgba(161, 61, 45, 0.35);
+    color: var(--accent);
+    background: rgba(255, 250, 245, 0.95);
+}
+
+.proj-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    box-shadow: 0 8px 20px rgba(161, 61, 45, 0.25);
+}
+
+/* Projects Grid */
+.proj-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.proj-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    padding: 36px;
+    background: rgba(255, 250, 245, 0.8);
+    border: 1px solid rgba(77, 52, 36, 0.08);
+    box-shadow: 0 10px 32px rgba(45, 28, 17, 0.04);
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.proj-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 48px rgba(45, 28, 17, 0.08);
+}
+
+.proj-card-header {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 32px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+}
+
+.proj-meta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.proj-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+}
+
+.proj-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+}
+
+.proj-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.proj-location i {
+    color: var(--accent);
+}
+
+.proj-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--muted);
+    padding-top: 4px;
+}
+
+/* Image Grid */
+.proj-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* Gallery Wrapper & Scroll Buttons */
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid rgba(77, 52, 36, 0.15);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    color: var(--accent);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+    opacity: 0.8;
+}
+
+.scroll-btn:hover {
+    background: var(--accent);
+    color: white;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.scroll-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-btn.prev-btn {
+    left: -22px;
+}
+
+.scroll-btn.next-btn {
+    right: -22px;
+}
+
+/* Horizontal Side Scroll Container (Native) */
+.proj-image-grid.side-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.proj-image-grid.side-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.proj-image-grid.side-scroll::-webkit-scrollbar-track {
+    background: rgba(77, 52, 36, 0.06);
+    border-radius: 4px;
+}
+
+.proj-image-grid.side-scroll::-webkit-scrollbar-thumb {
+    background: rgba(161, 61, 45, 0.4);
+    border-radius: 4px;
+}
+
+.proj-image-grid.side-scroll .proj-img-item {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+}
+
+.proj-img-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 240px;
+    background: #14100e;
+    border: 1px solid rgba(77, 52, 36, 0.06);
+    display: block;
+}
+
+.proj-img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proj-img-item:hover img {
+    transform: scale(1.06);
+}
+
+.proj-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 10, 8, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 280ms ease;
+}
+
+.proj-img-item:hover .proj-img-overlay {
+    opacity: 1;
+}
+
+.proj-img-overlay span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(161, 61, 45, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    transform: translateY(10px);
+    transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proj-img-item:hover .proj-img-overlay span {
+    transform: translateY(0);
+}
+
+/* Tab Filter animations */
+.proj-card.hide {
+    display: none;
+}
+
+.proj-card.show {
+    display: flex;
+    animation: projCardFadeIn 0.4s ease forwards;
+}
+
+@keyframes projCardFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive overrides ────────────────────────────────── */
+@media (max-width: 980px) {
+    .proj-card-header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .proj-image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .proj-card {
+        padding: 24px;
+    }
+    .proj-image-grid {
+        grid-template-columns: 1fr;
+    }
+    .proj-img-item {
+        height: 200px;
+    }
+    .scroll-btn.prev-btn {
+        left: -12px;
+    }
+    .scroll-btn.next-btn {
+        right: -12px;
+    }
+}

@@ -503,6 +503,28 @@
         .pricing-intro { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; align-items: end; margin-bottom: 20px; }
         .pricing-intro .section-title, .pricing-intro .section-description { color: white; }
         .pricing-note { padding: 14px 18px; border-radius: 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); line-height: 1.5; font-size: 0.85rem; }
+        
+        .pricing-promo-banner {
+            display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 16px 22px; border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255, 44, 27, 0.12), rgba(248, 212, 153, 0.05));
+            border: 1px solid rgba(255, 44, 27, 0.35);
+            box-shadow: 0 12px 30px rgba(255, 44, 27, 0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+            position: relative; overflow: hidden; margin-bottom: 12px;
+        }
+        .promo-text { color: #f3c87f; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .highlight-free {
+            background: rgba(243, 200, 127, 0.15);
+            padding: 4px 10px; border-radius: 8px; color: #fff; font-weight: 800;
+            border: 1px solid rgba(243, 200, 127, 0.4);
+            display: inline-block; letter-spacing: 0.02em;
+        }
+        .btn-promo {
+            padding: 12px 26px; font-size: 0.95rem; border-radius: 999px; font-family: inherit;
+            background: linear-gradient(135deg, #ff2c1b, #d90f06); color: white; border: none; font-weight: 800; margin-left: auto;
+            box-shadow: 0 6px 18px rgba(255, 44, 27, 0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.3s ease; cursor: pointer; position: relative; z-index: 1;
+        }
+        .btn-promo:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255, 44, 27, 0.5), inset 0 1px 0 rgba(255,255,255,0.3); background: linear-gradient(135deg, #ff3b2c, #c80d05); }
         .pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
         .pricing-plan { padding: 20px; border-radius: 22px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px); display: flex; flex-direction: column; }
         .pricing-plan.featured { background: linear-gradient(160deg, rgba(200, 87, 59, 0.92), rgba(138, 49, 35, 0.92)); border-color: rgba(255,255,255,0.16); transform: translateY(-4px); }
@@ -512,6 +534,32 @@
         .pricing-plan ul { list-style: none; display: grid; gap: 10px; margin-bottom: 16px; flex: 1; }
         .pricing-plan li { position: relative; padding-left: 22px; color: rgba(255,255,255,0.95); line-height: 1.5; font-size: 0.95rem; font-weight: 500; }
         .pricing-plan li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: #f8d499; font-weight: 800; font-size: 1.1rem; }
+        
+        /* New Sub-Features Styling */
+        .pricing-plan li.feature-group { padding-left: 0; }
+        .pricing-plan li.feature-group::before { display: none; }
+        .pricing-plan .group-title { position: relative; padding-left: 24px; font-weight: 700; color: #fff; display: block; margin: 8px 0 6px; font-size: 1.05rem; }
+        .pricing-plan .group-title:first-child { margin-top: 0; }
+        .pricing-plan .group-title::before { content: "\2713"; position: absolute; left: 0; top: 0; color: #f8d499; font-weight: 800; font-size: 1.1rem; }
+        .pricing-plan .group-title.plus-icon::before { content: "+"; font-size: 1.4rem; top: -4px; left: -1px; }
+        .pricing-plan ul.sub-features { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; flex: none; }
+        .pricing-plan ul.sub-features li { padding-left: 18px; font-size: 0.9rem; color: rgba(255,255,255,0.85); font-weight: 400; line-height: 1.35; }
+        .pricing-plan ul.sub-features li::before { content: "\2022"; color: rgba(255,255,255,0.4); font-size: 1.4rem; left: 0; top: -5px; }
+        
+        .pricing-plan li.base-plan-includes {
+            background: linear-gradient(135deg, rgba(248, 212, 153, 0.15), rgba(248, 212, 153, 0.05));
+            border: 1px solid rgba(248, 212, 153, 0.25);
+            border-radius: 12px;
+            padding: 12px 14px 12px 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .pricing-plan li.base-plan-includes::before {
+            top: 12px;
+            left: 16px;
+        }
         .plan-button { width: 100%; }
         .plan-button.btn-secondary { background: rgba(255,255,255,0.14); color: white; border-color: rgba(255,255,255,0.18); }
         .plan-button.btn-secondary:hover { background: rgba(255,255,255,0.2); }

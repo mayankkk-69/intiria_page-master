@@ -9,9 +9,9 @@
                         <p class="section-description">Every plan starts with strong design fundamentals and scales up into visualisation, vendor coordination, furniture detailing, and deeper project oversight.</p>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
-                        <div class="pricing-note" style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-                            <span style="color: #f3c87f; font-weight: 700; font-size: 1.05rem;">Book your first site visit for free</span>
-                            <button class="btn btn-primary" onclick="openBookingModal()" style="padding: 8px 20px; font-size: 0.85rem; border-radius: 999px; background: #ff2c1b; border: none; box-shadow: none; margin-left: auto;">Book Now</button>
+                        <div class="pricing-promo-banner">
+                            <span class="promo-text">Book your first site <span class="highlight-free">visit for free</span></span>
+                            <button class="btn-promo" onclick="openBookingModal()">Book Now</button>
                         </div>
                         <div class="pricing-note">Use these tiers as a quick filter. If your space needs something custom, the contact sheet below is a better place to begin.</div>
                     </div>
@@ -24,16 +24,55 @@
                         <h3>Standard Plan</h3>
                         <p class="plan-summary">A practical essentials package for clients who need a solid design and drawing foundation.</p>
                         <ul>
-                            <li>Concept design and visual references</li>
-                            <li>2D detail drawings for major interior elements</li>
-                            <li>Electrical, water supply, and plumbing drawings</li>
-                            <li>Material guidance and colour combinations</li>
-                            <li>Contractor finalization assistance</li>
-                            <li>Audio and video call support during the project</li>
-                            <li>Site visit assistance</li>
-                            <li>Basic 3D visual previews</li>
-                            <li>Vendor coordination support</li>
-                            <li>Fixed furniture detailing</li>
+                            <li class="feature-group">
+                                <span class="group-title">Concept & Planning</span>
+                                <ul class="sub-features">
+                                    <li>Conceptual planning</li>
+                                    <li>Visual references</li>
+                                    <li>Vastu incorporation</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title">Working Drawings</span>
+                                <ul class="sub-features">
+                                    <li>Furniture layout (as per layout plan)</li>
+                                    <li>False ceiling layout</li>
+                                    <li>Flooring layout</li>
+                                    <li>Wall panelling</li>
+                                    <li>Door & window moulding designs</li>
+                                    <li>Wardrobe wooden detail drawings</li>
+                                    <li>Kitchen detail drawings</li>
+                                    <li>Toilet detail drawings</li>
+                                    <li>Fixed furniture detail drawings</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title">Service Drawings</span>
+                                <ul class="sub-features">
+                                    <li>Electrical drawings</li>
+                                    <li>Plumbing drawings</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title">Material & Finish Selection</span>
+                                <ul class="sub-features">
+                                    <li>Material selection</li>
+                                    <li>Colour & shade selection</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title">3D Visualization</span>
+                                <ul class="sub-features">
+                                    <li>3D views (limited changes)</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title">Site & Execution Support</span>
+                                <ul class="sub-features">
+                                    <li>Site visits (3–7 visits depending on project size)</li>
+                                    <li>Vendor coordination support</li>
+                                </ul>
+                            </li>
                         </ul>
                     </article>
 
@@ -43,14 +82,51 @@
                         <h3>Premium Plan</h3>
                         <p class="plan-summary">Best for clients who want a clearer visual outcome before site execution begins.</p>
                         <ul>
-                            <li>Everything in the Standard Plan</li>
-                            <li>3D views for all spaces</li>
-                            <li>Five additional site visits</li>
-                            <li>Vastu incorporation</li>
-                            <li>Loose furniture detailing</li>
-                            <li>Vendor management support</li>
-                            <li>Material requirement planning</li>
-                            <li>Material selection visits (2 visits)</li>
+                            <li class="base-plan-includes">Everything in the Standard Plan</li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Advanced Visualization</span>
+                                <ul class="sub-features">
+                                    <li>3D views for all spaces (unlimited changes)</li>
+                                    <li>Better design visualization before execution</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Furniture Detailing</span>
+                                <ul class="sub-features">
+                                    <li>Loose furniture detail drawings</li>
+                                    <li>Furniture selection guidance</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Vendor & Execution Support</span>
+                                <ul class="sub-features">
+                                    <li>Vendor management support</li>
+                                    <li>Vendor finalization assistance</li>
+                                    <li>Execution coordination support</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Material Planning & Selection</span>
+                                <ul class="sub-features">
+                                    <li>Material selection visits (1–2 additional market visits based on project size)</li>
+                                    <li>Work estimation</li>
+                                    <li>Material planning assistance</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Project Planning</span>
+                                <ul class="sub-features">
+                                    <li>Project management chart</li>
+                                    <li>Execution milestone planning</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Design Enhancements</span>
+                                <ul class="sub-features">
+                                    <li>Vastu incorporation</li>
+                                    <li>Space optimization recommendations</li>
+                                </ul>
+                            </li>
                         </ul>
                     </article>
 
@@ -60,16 +136,46 @@
                         <h3>Elite Plan</h3>
                         <p class="plan-summary">For premium residences needing deeper coordination, detail resolution, and tracking.</p>
                         <ul>
-                            <li>Everything in the Premium Plan</li>
-                            <li>Scientific vastu inputs</li>
-                            <li>Furniture detailing</li>
-                            <li>Onsite sample selection</li>
-                            <li>Online vendor management system access</li>
-                            <li>Timeline and project monitoring support</li>
-                            <li>Project timeline management</li>
-                            <li>Advanced vendor management</li>
-                            <li>Material catalogue support</li>
-                            <li>Material selection visits (5 visits)</li>
+                            <li class="base-plan-includes">Everything in the Premium Plan</li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Material & Sample Selection</span>
+                                <ul class="sub-features">
+                                    <li>On-site sample selection</li>
+                                    <li>Material selection visits (2–5 additional market visits based on project size)</li>
+                                    <li>Premium finish selection support</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Advanced Vendor Management</span>
+                                <ul class="sub-features">
+                                    <li>Vendor management support</li>
+                                    <li>Bill approvals</li>
+                                    <li>Vendor performance monitoring</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Project Monitoring</span>
+                                <ul class="sub-features">
+                                    <li>Project timeline monitoring (weekly reports)</li>
+                                    <li>Progress tracking support</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Documentation & Estimation</span>
+                                <ul class="sub-features">
+                                    <li>BOQ (Bill of Quantities)</li>
+                                    <li>Work estimate</li>
+                                    <li>Quantity verification support</li>
+                                </ul>
+                            </li>
+                            <li class="feature-group">
+                                <span class="group-title plus-icon">Design & Material Support</span>
+                                <ul class="sub-features">
+                                    <li>Scientific vastu inputs</li>
+                                    <li>Material catalogue support</li>
+                                    <li>Product specification guidance</li>
+                                </ul>
+                            </li>
                         </ul>
                     </article>
 
