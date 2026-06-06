@@ -1,0 +1,40 @@
+/* ============================================================
+   sections/kpi/mobile.css
+   Mobile styles for: kpi-strip, kpi-panel, kpi-grid, kpi-card
+   ============================================================ */
+
+/* ── 1024px: Horizontal scroll strip ── */
+@media (max-width: 1024px) {
+    .kpi-grid {
+        display: flex; gap: 12px; overflow-x: auto;
+        padding: 0 0 10px; transform: none;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .kpi-card {
+        min-width: 220px; scroll-snap-align: start; flex-shrink: 0;
+    }
+}
+
+/* ── 860px: Narrower cards ── */
+@media (max-width: 860px) {
+    .kpi-card { min-width: 52%; min-height: 140px; padding: 18px 14px 16px; }
+    .kpi-card strong { font-size: 1.9rem; }
+    .kpi-card span { font-size: 0.78rem; }
+}
+
+/* ── 640px: Wider cards ── */
+@media (max-width: 640px) {
+    .kpi-card { min-width: 70%; min-height: 130px; }
+}
+
+/* ── 480px: Almost full width per card ── */
+@media (max-width: 480px) {
+    .kpi-card { min-width: 78%; }
+    .kpi-card strong { font-size: 1.8rem; }
+}
+
+/* ── 380px: Full stretch ── */
+@media (max-width: 380px) {
+    .kpi-card { min-width: 86%; }
+}

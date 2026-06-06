@@ -1,0 +1,105 @@
+/* ============================================================
+   sections/hero/mobile.css
+   Mobile styles for: redesigned-hero, new-hero-layout,
+   hero-form-card, bottom-benefits
+   ============================================================ */
+
+/* ── 860px: Stack hero to single column, full width ── */
+@media (max-width: 860px) {
+    .hero { padding: 10px 0 0; }
+    .redesigned-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 0 24px 24px !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    .new-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 52px 20px 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .hero-left-content { max-width: 100%; }
+    .hero-right-content { display: flex; justify-content: center; width: 100%; }
+    .hero-form-card {
+        max-width: 480px; width: 100%;
+        margin: 0 auto; padding: 20px 18px;
+        box-sizing: border-box;
+    }
+    .hero-title { font-size: 1.8rem !important; min-height: auto !important; line-height: 1.1 !important; }
+    .hero-tagline { font-size: 0.95rem; }
+    .hero-subtitle { font-size: 0.85rem; max-width: 100%; }
+
+    /* Benefits bar — pull out of absolute, go full-width */
+    .bottom-benefits {
+        position: relative !important;
+        bottom: auto !important; left: auto !important;
+        transform: none !important;
+        width: 100% !important; max-width: 100% !important;
+        box-sizing: border-box;
+        padding: 14px 20px !important;
+        border-radius: 0 0 22px 22px !important;
+        margin-top: 0;
+        display: flex; align-items: center; justify-content: space-around;
+    }
+    .bottom-benefits .benefit-divider { height: 36px !important; width: 2px !important; }
+    .bottom-benefits .benefit-text { font-size: 0.82rem !important; }
+    .bottom-benefits .ben-icon { font-size: 1.5rem; }
+}
+
+/* ── 640px: Compact text + padding ── */
+@media (max-width: 640px) {
+    .redesigned-hero { border-radius: 0 0 18px 18px !important; }
+    .new-hero-layout { padding: 44px 16px 14px; gap: 16px; }
+    .hero-title { font-size: 1.55rem !important; }
+    .hero-tagline { font-size: 0.88rem; margin-bottom: 8px; }
+    .hero-subtitle { font-size: 0.8rem; line-height: 1.55; margin-bottom: 16px; }
+    .hero-actions-new .btn { width: 100%; justify-content: center; }
+    .hero-form-card { padding: 16px 14px; border-radius: 14px; }
+    .bottom-benefits {
+        padding: 10px 14px !important; gap: 6px !important;
+        border-radius: 0 0 16px 16px !important;
+    }
+    .bottom-benefits .benefit-text { font-size: 0.75rem !important; }
+    .bottom-benefits .ben-icon { font-size: 1.3rem; }
+    .bottom-benefits .benefit-divider { height: 26px !important; }
+}
+
+/* ── 480px: Smallest phones ── */
+@media (max-width: 480px) {
+    .new-hero-layout { padding: 40px 14px 12px; gap: 14px; }
+    .hero-title { font-size: 1.35rem !important; line-height: 1.12 !important; }
+    .hero-tagline { font-size: 0.8rem; margin-bottom: 6px; }
+    .hero-subtitle { font-size: 0.76rem; margin-bottom: 14px; }
+    .hero-form-card { padding: 14px 12px; border-radius: 12px; }
+    .form-header h2 { font-size: 1.1rem; }
+    .form-header p { font-size: 0.7rem !important; }
+    .btn-red { padding: 10px 18px !important; font-size: 0.88rem !important; }
+    /* Benefits — wrap into 3-icon row */
+    .bottom-benefits {
+        flex-wrap: wrap; justify-content: center;
+        gap: 8px !important; padding: 10px 10px !important;
+        border-radius: 0 0 14px 14px !important;
+    }
+    .bottom-benefits .benefit-divider { display: none !important; }
+    .bottom-benefits .benefit-item {
+        flex: 1 1 28%; flex-direction: column;
+        align-items: center; text-align: center;
+        gap: 4px !important; min-width: 76px;
+    }
+    .bottom-benefits .benefit-text { font-size: 0.68rem !important; }
+    .bottom-benefits .ben-icon { font-size: 1.2rem; }
+}
+
+/* ── 380px: Very small ── */
+@media (max-width: 380px) {
+    .new-hero-layout { padding: 36px 10px 10px; gap: 12px; }
+    .hero-title { font-size: 1.18rem !important; }
+    .hero-tagline { font-size: 0.74rem; }
+    .hero-subtitle { font-size: 0.7rem; }
+    .hero-form-card { padding: 12px 10px; }
+    .form-header h2 { font-size: 1rem; }
+}

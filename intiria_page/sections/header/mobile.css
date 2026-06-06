@@ -1,0 +1,84 @@
+/* ============================================================
+   sections/header/mobile.css
+   Mobile styles for: header, brand, hamburger, mobile drawer
+   ============================================================ */
+
+/* ── 860px: Show hamburger, hide desktop nav ── */
+@media (max-width: 860px) {
+    header { border-radius: 0 0 20px 20px; }
+    .header-shell { min-height: 62px; width: 96%; }
+
+    /* Hide desktop items */
+    .desktop-menu,
+    .header-actions .header-cta,
+    .header-actions .header-icon,
+    .header-actions .profile-dropdown { display: none !important; }
+
+    /* Show hamburger */
+    .hamburger { display: flex !important; }
+
+    /* Show brand name text */
+    .brand-copy { display: flex !important; flex-direction: column; gap: 1px; }
+    .brand-copy strong { font-size: 1.05rem; display: block; }
+    .brand-copy small { font-size: 0.48rem; letter-spacing: 0.26em; }
+    .brand-mark img { width: 40px; height: 40px; }
+
+    /* Mobile menu drawer */
+    .mobile-menu { padding: 72px 16px 28px; }
+    .mobile-menu ul {
+        list-style: none; padding: 0; margin: 0;
+        display: flex; flex-direction: column; gap: 6px;
+    }
+    .mobile-menu li + li { margin-top: 0; }
+    .mobile-menu a {
+        display: flex; align-items: center;
+        padding: 14px 18px; border-radius: 14px;
+        font-size: 1rem; font-weight: 600; color: #1f2124;
+        background: rgba(255,255,255,0.78);
+        border: 1px solid rgba(43,31,24,0.07);
+        transition: background 0.2s, color 0.2s;
+    }
+    .mobile-menu a:hover { background: rgba(232,85,58,0.08); color: #E8553A; }
+
+    /* Call link — green */
+    .mobile-menu li:nth-last-child(3) a {
+        background: rgba(37,211,102,0.08); color: #1a8c45;
+        border-color: rgba(37,211,102,0.15);
+    }
+    /* CTA buttons — coral */
+    .mobile-menu li:nth-last-child(2) a,
+    .mobile-menu li:nth-last-child(2) button,
+    .mobile-menu li:last-child a {
+        background: linear-gradient(135deg, #E8553A, #cf4428);
+        color: white !important; border: none;
+        justify-content: center; margin-top: 4px;
+        box-shadow: 0 8px 20px rgba(232,85,58,0.3);
+    }
+    /* Close × button */
+    .close-menu {
+        position: absolute; top: 18px; right: 18px;
+        width: 40px; height: 40px;
+        display: grid; place-items: center; border-radius: 50%;
+        background: rgba(232,85,58,0.08); color: #E8553A;
+        font-size: 1.3rem; cursor: pointer;
+    }
+    /* Overlay + open states */
+    .mobile-menu-overlay.open { display: block; }
+    .mobile-menu.open { right: 0; }
+}
+
+/* ── 640px: Tighter header ── */
+@media (max-width: 640px) {
+    header { border-radius: 0 0 16px 16px; }
+    .header-shell { width: 97% !important; min-height: 56px; }
+    .brand-copy strong { font-size: 0.96rem; }
+    .brand-copy small { display: none; }
+    .brand-mark img { width: 36px; height: 36px; }
+}
+
+/* ── 480px: Logo only, no brand text ── */
+@media (max-width: 480px) {
+    .brand-copy { display: none !important; }
+    .brand-mark img { width: 38px; height: 38px; }
+    .hamburger { width: 42px; height: 42px; }
+}

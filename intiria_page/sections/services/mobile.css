@@ -1,0 +1,56 @@
+/* ============================================================
+   sections/services/mobile.css
+   Mobile styles for: services-hero, services-cards,
+   services-grid, service-card, stats-card
+   ============================================================ */
+
+/* ── 860px: Stack hero layout ── */
+@media (max-width: 860px) {
+    .services-hero { min-height: 80vw; border-radius: 0 0 24px 24px; }
+    .services-hero-inner {
+        flex-direction: column; align-items: flex-start;
+        padding: 100px 24px 36px; gap: 24px;
+    }
+    .services-hero-content { max-width: 100%; }
+    .services-hero-content h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+    .services-hero-content p { font-size: 0.9rem; max-width: 100%; }
+    .stats-card {
+        position: relative; top: auto; right: auto;
+        width: 100%; max-width: 100%;
+        flex-direction: row; gap: 0;
+        border-radius: 16px;
+    }
+    .stat-item { flex: 1; border-right: 1px solid rgba(255,255,255,0.15); }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: 1.6rem; }
+    .stat-label { font-size: 0.72rem; }
+    .services-cards .section-heading h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .services-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .service-card { padding: 24px 20px; min-height: 280px; }
+}
+
+/* ── 640px: Single column cards ── */
+@media (max-width: 640px) {
+    .services-hero { border-radius: 0 0 18px 18px; min-height: 90vw; }
+    .services-hero-inner { padding: 90px 18px 28px; }
+    .services-hero-content h1 { font-size: clamp(1.9rem, 7vw, 2.8rem); }
+    .services-hero-actions { flex-direction: column; gap: 10px; }
+    .btn-services-primary, .btn-services-secondary { width: 100%; text-align: center; justify-content: center; }
+    .services-grid { grid-template-columns: 1fr; gap: 14px; }
+    .service-card { padding: 20px 18px; min-height: auto; }
+    .service-icon { width: 44px; height: 44px; font-size: 1.2rem; margin-bottom: 12px; }
+    .service-card h3 { font-size: 1rem; }
+    .service-card p { font-size: 0.84rem; }
+    .service-tags { gap: 6px; margin-top: 12px; }
+    .service-tag { font-size: 0.72rem; padding: 3px 8px; }
+}
+
+/* ── 480px: Compact everything ── */
+@media (max-width: 480px) {
+    .services-hero-inner { padding: 80px 14px 22px; }
+    .services-hero-content h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .badge-pill { font-size: 0.78rem; padding: 6px 12px; }
+    .stat-number { font-size: 1.4rem; }
+    .services-cards { padding: 32px 0; }
+    .services-cards .container { width: 96%; }
+}

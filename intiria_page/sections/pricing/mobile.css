@@ -1,0 +1,36 @@
+/* ============================================================
+   sections/pricing/mobile.css
+   Mobile styles for: pricing-section, pricing-band,
+   pricing-inner, pricing-intro, pricing-grid, pricing-plan
+   ============================================================ */
+
+/* ── 860px: Single column layout ── */
+@media (max-width: 860px) {
+    .pricing-intro { grid-template-columns: 1fr; gap: 16px; }
+    .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+    .pricing-band { border-radius: 20px; }
+    .pricing-inner { padding-left: 4%; padding-right: 4%; }
+    .pricing-promo-banner { flex-direction: column; gap: 10px; align-items: flex-start; }
+}
+
+/* ── 768px: Tighter plan cards ── */
+@media (max-width: 768px) {
+    .pricing-plan { padding: 28px 20px; border-radius: 20px; }
+    .pricing-grid { gap: 16px; }
+    .plan-header-card h3 { font-size: 1.3rem; }
+    .plan-price-block .amount { font-size: 2.2rem; }
+    .plan-feature { font-size: 0.88rem; }
+    .pricing-promo-banner { width: 100%; justify-content: space-between; }
+    .btn-promo { width: 100%; justify-content: center; }
+}
+
+/* ── 480px: Compact plan cards ── */
+@media (max-width: 480px) {
+    .pricing-section { padding: 32px 0; }
+    .pricing-plan { padding: 22px 16px; border-radius: 16px; }
+    .plan-price-block .amount { font-size: 1.9rem; }
+    .plan-chip { font-size: 0.7rem; padding: 4px 10px; }
+    .plan-cta { padding: 12px 14px; font-size: 0.88rem; }
+    .feature-group { font-size: 0.82rem; }
+    .group-title { font-size: 0.78rem; }
+}

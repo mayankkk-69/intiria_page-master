@@ -1,0 +1,39 @@
+/* ============================================================
+   sections/projects/projects-gallery/mobile.css
+   Mobile styles for: proj-gallery-section, proj-tabs,
+   proj-tab, proj-grid, proj-card
+   ============================================================ */
+
+/* ── 900px: Tabs scroll horizontally ── */
+@media (max-width: 900px) {
+    .proj-tabs {
+        overflow-x: auto; -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory; gap: 6px;
+        padding-bottom: 4px;
+    }
+    .proj-tab {
+        flex-shrink: 0; scroll-snap-align: start;
+        font-size: 0.82rem; padding: 8px 14px; border-radius: 999px;
+    }
+    .proj-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+
+/* ── 640px: Compact gallery ── */
+@media (max-width: 640px) {
+    .proj-gallery-section { padding: 36px 0; }
+    .proj-gallery-section .container { width: 97%; }
+    .proj-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .proj-card { border-radius: 14px; }
+    .proj-card-img { height: 160px; }
+    .proj-card-body { padding: 12px; }
+    .proj-card-title { font-size: 0.88rem; }
+    .proj-card-meta { font-size: 0.72rem; }
+}
+
+/* ── 480px: Single column gallery ── */
+@media (max-width: 480px) {
+    .proj-grid { grid-template-columns: 1fr; gap: 12px; }
+    .proj-card-img { height: 200px; }
+    .proj-card-body { padding: 14px; }
+    .proj-tab { font-size: 0.76rem; padding: 6px 12px; }
+}

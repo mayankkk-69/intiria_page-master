@@ -1,0 +1,50 @@
+/* ============================================================
+   sections/projects/mobile.css
+   Mobile styles for: projects-hero, projects-list,
+   project-card, project-card-header, project images
+   ============================================================ */
+
+/* ── 860px: Hero layout ── */
+@media (max-width: 860px) {
+    .projects-hero { min-height: 72vw; border-radius: 0 0 24px 24px; }
+    .projects-hero-content {
+        padding: 100px 24px 40px;
+        max-width: 100%;
+    }
+    .projects-hero-content h1 { font-size: clamp(2rem, 7vw, 3rem); }
+    .projects-hero-content p { font-size: 0.9rem; }
+    .projects-hero-actions { flex-wrap: wrap; gap: 10px; }
+    .projects-list { padding: 40px 0; }
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 16px; padding: 20px 18px; border-radius: 18px;
+    }
+    .project-card-header { gap: 10px; }
+    .project-image-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .project-image-grid img { border-radius: 10px; height: 130px; object-fit: cover; }
+}
+
+/* ── 640px: Compact cards ── */
+@media (max-width: 640px) {
+    .projects-hero { border-radius: 0 0 18px 18px; min-height: 80vw; }
+    .projects-hero-content { padding: 90px 18px 32px; }
+    .projects-hero-content h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+    .projects-list { padding: 28px 0; }
+    .projects-list .container { width: 96%; }
+    .project-card { padding: 16px 14px; border-radius: 14px; gap: 14px; }
+    .project-type-badge { font-size: 0.68rem; padding: 3px 8px; }
+    .project-name { font-size: 1.1rem; }
+    .project-location { font-size: 0.78rem; }
+    .project-desc { font-size: 0.82rem; }
+    .project-image-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .project-image-grid img { height: 110px; border-radius: 8px; }
+}
+
+/* ── 480px: Very compact ── */
+@media (max-width: 480px) {
+    .projects-hero-content { padding: 80px 14px 24px; }
+    .projects-hero-content h1 { font-size: clamp(1.6rem, 7vw, 2rem); }
+    .project-card { padding: 14px 12px; border-radius: 12px; }
+    .project-image-grid img { height: 90px; }
+    .carousel-btn { width: 32px; height: 32px; font-size: 0.8rem; }
+}

@@ -1,0 +1,53 @@
+/* ============================================================
+   sections/industrial-quote/mobile.css
+   Mobile styles for: 3-column layout → vertical stack,
+   image sliders, form inputs, modals
+   ============================================================ */
+
+/* ── 1024px: Reduce column widths ── */
+@media (max-width: 1024px) {
+    .column { flex: 1 1 calc(33.33% - 16px); min-width: 260px; }
+    .column:first-child { min-width: 200px; }
+}
+
+/* ── 860px: Stack to single column ── */
+@media (max-width: 860px) {
+    .main-content, .columns-wrapper,
+    .content-row, .three-col-layout {
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    .column {
+        width: 100% !important; max-width: 100%;
+        min-width: unset; flex: none;
+    }
+    .image-container { height: 240px; border-radius: 14px; }
+    .scrollable-images img { height: 240px; border-radius: 14px; }
+    .slider-container { width: 100%; border-radius: 14px; }
+    .quote-header h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    .quote-header p { font-size: 0.88rem; }
+}
+
+/* ── 640px: Compact quote form ── */
+@media (max-width: 640px) {
+    .quote-section { padding: 28px 0; }
+    .quote-container { padding: 0 4%; }
+    .column { padding: 16px 14px; border-radius: 14px; }
+    .image-container { height: 200px; }
+    .checkbox-container { gap: 8px; }
+    .checkbox-container label { font-size: 0.85rem; }
+    .button-container { flex-direction: column; gap: 10px; }
+    .button-container button { width: 100%; }
+}
+
+/* ── 480px: Minimal padding ── */
+@media (max-width: 480px) {
+    .quote-header h1 { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+    .column { padding: 14px 12px; border-radius: 12px; }
+    .image-container { height: 180px; border-radius: 12px; }
+    .modal-content { padding: 20px 16px; border-radius: 16px; margin: 10px; }
+    .modal-content h3 { font-size: 1.1rem; }
+    .social-share { flex-direction: column; gap: 8px; }
+    .social-share button { width: 100%; }
+}

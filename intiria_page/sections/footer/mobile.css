@@ -1,0 +1,34 @@
+/* ============================================================
+   sections/footer/mobile.css
+   Mobile styles for: footer-main-grid, footer-brand,
+   footer-links-wrapper, footer-column, social icons
+   ============================================================ */
+
+/* ── 860px: Stack footer columns ── */
+@media (max-width: 860px) {
+    .footer-main-grid { grid-template-columns: 1fr !important; gap: 32px; }
+    .footer-links-wrapper { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .footer-brand h2 { font-size: 1.6rem; }
+    .footer-brand p { font-size: 0.88rem; }
+}
+
+/* ── 640px: Tighter footer ── */
+@media (max-width: 640px) {
+    .footer-links-wrapper { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .footer-column h3 { font-size: 0.9rem; margin-bottom: 10px; }
+    .footer-column li a { font-size: 0.82rem; padding: 3px 0; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .footer-legal { font-size: 0.75rem; }
+    .social-media-icons-inline { gap: 10px; }
+    .social-media-icons-inline a { width: 34px; height: 34px; font-size: 0.9rem; }
+}
+
+/* ── 480px: Single column links ── */
+@media (max-width: 480px) {
+    .footer-links-wrapper { grid-template-columns: 1fr; gap: 20px; }
+    .footer-brand h2 { font-size: 1.4rem; }
+    .footer-column h3 { font-size: 0.88rem; }
+    .footer-column li a { font-size: 0.8rem; }
+    .footer-legal { font-size: 0.72rem; }
+    .social-media-icons-inline a { width: 32px; height: 32px; font-size: 0.85rem; }
+}

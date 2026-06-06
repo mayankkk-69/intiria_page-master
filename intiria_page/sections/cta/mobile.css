@@ -1,0 +1,41 @@
+/* ============================================================
+   sections/cta/mobile.css
+   Mobile styles for: premium-cta, cta-container,
+   cta-horizontal-layout, intake-card, intake-form
+   ============================================================ */
+
+/* ── 860px: Stack layout ── */
+@media (max-width: 860px) {
+    .premium-cta { padding: 50px 0; }
+    .cta-horizontal-layout {
+        grid-template-columns: 1fr !important;
+        gap: 24px; text-align: center;
+    }
+    .cta-text-area { grid-column: span 1; text-align: center; }
+    .cta-eyebrow { justify-content: center; }
+    .cta-direct { justify-content: center; }
+    .cta-intake-cards { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .cta-ambient-glow { display: none; }
+}
+
+/* ── 640px: Single column intake cards ── */
+@media (max-width: 640px) {
+    .premium-cta { padding: 40px 0; }
+    .cta-container { padding: 0 4%; }
+    .cta-intake-cards { grid-template-columns: 1fr; gap: 12px; }
+    .intake-card { padding: 20px 18px; border-radius: 16px; }
+    .intake-title { font-size: 1rem; margin-bottom: 16px; }
+    .intake-form { gap: 10px; }
+}
+
+/* ── 480px: Compact cards ── */
+@media (max-width: 480px) {
+    .premium-cta { padding: 32px 0; }
+    .intake-card { padding: 16px 14px; border-radius: 14px; }
+    .intake-title { font-size: 0.92rem; margin-bottom: 14px; }
+    .btn-intake { padding: 12px 14px; font-size: 0.86rem; }
+    .intake-form input,
+    .intake-form textarea { font-size: 0.88rem; }
+    .cta-center-text h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .cta-center-text p { font-size: 0.88rem; }
+}
