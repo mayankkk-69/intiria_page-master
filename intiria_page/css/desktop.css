@@ -518,7 +518,7 @@
         .service-quote:hover { transform: translateY(-2px); }
         .pricing-section { padding: 32px 0 0; }
         .pricing-band { position: relative; border-radius: 38px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow-soft); background-size: cover; background-position: center; }
-        .pricing-band::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(19, 15, 13, 0.93), rgba(27, 21, 18, 0.78)); }
+        .pricing-band::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)); }
         .pricing-inner { position: relative; z-index: 1; padding: 28px clamp(16px, 3vw, 28px); color: white; }
         .pricing-intro { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; align-items: end; margin-bottom: 22px; }
         .pricing-intro .section-title, .pricing-intro .section-description { color: white; }

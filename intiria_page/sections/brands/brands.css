@@ -3,7 +3,7 @@
 ══════════════════════════════════════════════════════ */
 
 .brands-section {
-    background: #faf7f3;
+    background: #ffffff; /* Lighter section background */
     padding: 56px 0 48px;
     overflow: hidden;
     position: relative;
